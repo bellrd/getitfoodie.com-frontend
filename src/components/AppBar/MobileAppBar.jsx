@@ -1,7 +1,6 @@
 import {
   AppBar,
   Badge,
-  Box,
   Chip,
   CssBaseline,
   Drawer,
@@ -28,6 +27,9 @@ const useStyle = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+  },
+  track: {
+    marginLeft: "15vw",
   },
 
   close: {
@@ -65,9 +67,12 @@ export default (props) => {
           </IconButton>
 
           <Chip
+            className={classes.track}
             color="primary"
-            label="Track your order"
-            onClick={() => {history.push("/orderHistory")}}
+            label="Track my order"
+            onClick={() => {
+              history.push("/orderHistory");
+            }}
           />
 
           <Typography variant="h6" className={classes.title}></Typography>
@@ -88,9 +93,9 @@ export default (props) => {
               Close
             </Fab>
           </Drawer>
-          <Box className={classes.orderStatus} hidden={!props.orderStatus}>
+          {/* <Box className={classes.orderStatus}>
             <Typography variant={"h6"}> Order Status</Typography>
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
     </React.Fragment>

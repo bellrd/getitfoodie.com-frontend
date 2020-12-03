@@ -67,7 +67,7 @@ export default (props) => {
           <Chip
             color="primary"
             label="Track your order"
-            onClick={history.push("/orderHistory")}
+            onClick={() => {history.push("/orderHistory")}}
           />
 
           <Typography variant="h6" className={classes.title}></Typography>

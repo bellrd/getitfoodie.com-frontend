@@ -11,6 +11,27 @@ import QuickLinks from "../components/QuickLinks";
 import PopularMerchandiseList from "../components/PopularMerchandiseList";
 import hero_background from "../assets/hero_background.jpg";
 
+
+
+// import Popup from 'reactjs-popup';
+// import 'reactjs-popup/dist/index.css';
+
+
+// export default () => (
+//   <Popup trigger={<button> Trigger</button>} position="right center">
+//     <div>Popup content here !!</div>
+//   </Popup>
+// );
+
+
+
+
+
+
+
+
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -166,5 +187,37 @@ export default props => {
       </Container>
       <Footer />
     </React.Fragment>
+
+
+
+
+
+
+
+
+
   );
+
+
+  // <Popup trigger={<button>Trigger</button>} position="top left">
+  //   {close => (
+  //     <div>
+  //       Content here
+  //       <a className="close" onClick={close}>
+  //         &times;
+  //       </a>
+  //     </div>
+  //   )}
+  // </Popup>
 };
+
+/* <Popup trigger={<button>Trigger</button>} position="top left">
+    {close => (
+      <div>
+        Content here
+        <a className="close" onClick={close}>
+          &times;
+        </a>
+      </div>
+    )}
+  </Popup> */

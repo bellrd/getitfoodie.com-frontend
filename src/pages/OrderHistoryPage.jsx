@@ -12,6 +12,7 @@ import {
     Table,
     TableBody,
     TableCell,
+    Divider,
     TableContainer,
     TableHead,
     TableRow,
@@ -156,7 +157,6 @@ export default (props) => {
                                                     <TableCell align={"center"}> <b> Name </b> </TableCell>
                                                     <TableCell align={"right"}><b> Size </b> </TableCell>
                                                     <TableCell align={"right"}> <b> Quantity </b></TableCell>
-                                                    <TableCell align={"left"}> <b>SubTotal </b></TableCell>
                                                 </TableRow>
                                             </TableHead>
                                             <TableBody>
@@ -165,12 +165,36 @@ export default (props) => {
                                                         <TableCell align={"center"}> {order_item.name}</TableCell>
                                                         <TableCell align={"right"}> {order_item.size}</TableCell>
                                                         <TableCell align={"center"}> {order_item.quantity}</TableCell>
-                                                        <TableCell
-                                                            align={"left"}> {order_item.price * order_item.quantity}</TableCell>
+			
                                                     </TableRow>
                                                 ))}
                                             </TableBody>
                                         </Table>
+			    
+        <Divider variant="fullWidth" />
+          <div className={classes.second}>
+            <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue",
+              }}
+            >
+              TOTAL
+            </span>
+            <span
+              style={{
+                fontSize: "5vh",
+                fontWeight: "bold",
+                color: "blue",
+                align: "right",
+                
+              }}
+            >
+              ₹ {order.total}
+            </span>
+          </div>
+          
                                     </TableContainer>
 
 

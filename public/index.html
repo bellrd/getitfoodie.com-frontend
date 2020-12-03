@@ -5,10 +5,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Order food online"
-    />
+    <meta name="description" content="Order food online" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -16,8 +13,14 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="%PUBLIC_URL%/index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:600,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:600,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -32,15 +35,43 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="mousepot"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
-
+      
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        
+        To begin the development, run `npm start` or `yarn start`.
+        To create a production bundle, use `npm run build` or `yarn build`.
+      -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script>
+      // TODO: Replace the following with your app's Firebase project configuration
+      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+      var firebaseConfig = {
+        apiKey: "AIzaSyAJlmV9esBKOokrVd9gRETvxIv6cmynlK0",
+        authDomain: "getit-website.firebaseapp.com",
+        databaseURL: "https://getit-website.firebaseio.com",
+        projectId: "getit-website",
+        storageBucket: "getit-website.appspot.com",
+        messagingSenderId: "151361898319",
+        appId: "1:151361898319:web:b9a2f3c1975bc95898673a",
+        measurementId: "G-GK6QXSEL58",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        "mousepot",
+        {
+          size: "invisible",
+          callback: function (response) {
+            console.log("captcha works");
+          },
+        }
+      );
+    </script>
   </body>
 </html>

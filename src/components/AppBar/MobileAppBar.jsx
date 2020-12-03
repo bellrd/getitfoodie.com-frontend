@@ -13,7 +13,7 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import {Menu, Close, ShoppingCart} from "@material-ui/icons";
+import {Menu, Close, ShoppingCart, History} from "@material-ui/icons";
 import {GlobalContext} from "../../GlobalContext";
 import Axios from "axios";
 import {BASE_URL} from "../../constant";
@@ -32,6 +32,11 @@ const useStyle = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
+    },
+
+    track: {
+        flexGrow: 1,
+
     },
     close: {
         position:"fixed",
@@ -61,6 +66,25 @@ export default (props) => {
                     }}>
                         <Menu style={{color: "#fff", position: "relative"}}/>
                     </IconButton>
+
+
+
+
+
+
+                    <Typography variant="h6" className={classes.track}>
+                    </Typography>
+                    <IconButton component={Link} to={"/orderHistory"}
+                    >
+                        <Badge badgeContent={"TRACK"} color="primary">
+                            <History style={{color: "#fff"}}/>
+                        </Badge></IconButton>
+                    <Drawer open={drawer} anchor={"left"}></Drawer>
+
+
+
+
+
 
                     <Typography variant="h6" className={classes.title}>
                     </Typography>

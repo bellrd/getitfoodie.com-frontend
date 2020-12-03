@@ -138,9 +138,9 @@ export default (props) => {
                          {merchandise.name}
                        </Typography>
                        <Typography variant="subtitle1" color="textSecondary">
-                         <small>{"Veg & Non-veg"}</small> <br />
-                         <small>{"50% discount"}</small> <br />
-                         <small>{"Rs. 150 for two"}</small> <br />
+                         <small>{"Get Your Best Food."}</small> <br />
+                         <small>{"Dynamic Discont"}</small> <br />
+                         <small>{"Item Prices on Shop Menu"}</small> <br />
                        </Typography>
                      </CardContent>
                      <div className={classes.controls} style={{ padding: 8 }}>

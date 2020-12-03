@@ -56,6 +56,14 @@ export default props => {
             </Typography>
             <h4
               onClick={() => {
+                history.push(":/");
+              }}
+            >
+              Contact Us{" "}
+            </h4>
+
+            <h4
+              onClick={() => {
                 history.push("/profile");
               }}
             >

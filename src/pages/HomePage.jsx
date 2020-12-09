@@ -88,8 +88,8 @@ export default props => {
       <Container maxWidth={"xl"}>
         <CssBaseline />
         <Typography variant={"h6"} className={classes.vendorTitle}>
-          {" "}
-          Offers{" "}
+          {""}
+          Click Me Below On Slider{" "}
         </Typography>
         <Box mt={2}>
           <CssBaseline />
@@ -100,7 +100,7 @@ export default props => {
       <Container maxWidth={"lg"}>
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {" "}
-          Our Vendors{" "}
+          Get-it Popular Vendors{" "}
         </Typography>
         <Grid container spacing={4}>
           <MerchandiseCardList />
@@ -109,7 +109,7 @@ export default props => {
       <Container maxWidth={"lg"}>
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {" "}
-          Popular vendors{" "}
+          All Available Vendors{" "}
         </Typography>
         <Grid container spacing={4}>
           <PopularMerchandiseList />

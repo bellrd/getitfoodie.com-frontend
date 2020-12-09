@@ -7,6 +7,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useHistory } from "react-router-dom";
+
 import imageUrl1 from "../assets/burger.jpg";
 import imageUrl5 from "../assets/grocery.png";
 import imageUrl3 from "../assets/leg.jpg";
@@ -22,7 +23,7 @@ const demoOffer = [
     // description: "Best Chinese Food",
     // action: "some url",
     imageUrl: imageUrl1,
-    target_url: "/menu/17",
+    target_url: "/menu/4",
   },
   {
     // title: "Pure & Fresh Foods",
@@ -30,24 +31,28 @@ const demoOffer = [
     // action: "click me",O
     imageUrl: imageUrl2,
     //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/menu/2",
   },
   {
     // title: "Non-Vegetarian",
     // description: "Fresh Non-Veg",
     // action: "press me",
     imageUrl: imageUrl3,
+    target_url: "/menu/1",
   },
   {
     // title: "Fresh Vegetables",
     // description: "Care Of Health",
     // action: "Enjoy",
     imageUrl: imageUrl4,
+    target_url: "/menu/17",
   },
   {
     // title: "Grocery",
     // description: "Your Daily Essential",
     // action: "https://getitfoodie.com/menu/22",
     imageUrl: imageUrl5,
+    target_url: "/menu/22",
   },
 ];
 const responsive = {

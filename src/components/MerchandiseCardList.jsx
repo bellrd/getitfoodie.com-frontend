@@ -139,7 +139,7 @@ export default (props) => {
                        </Typography>
                        <Typography variant="subtitle1" color="textSecondary">
                          <small>{"Get Your Best Food."}</small> <br />
-                         <small>{"Dynamic Discont"}</small> <br />
+                         <small>{"Dynamic Discount"}</small> <br />
                          <small>{"Item Prices on Shop Menu"}</small> <br />
                        </Typography>
                      </CardContent>

@@ -1,24 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import {
-  Paper,
-  Box,
-  Button,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActionArea,
+  Button, Paper,
+  Typography
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import { useHistory } from "react-router-dom";
 import imageUrl1 from "../assets/burger.jpg";
-import imageUrl2 from "../assets/paneer.jpg";
-import imageUrl3 from "../assets/leg.jpg";
-import imageUrl4 from "../assets/vegetables.jpg";
 import imageUrl5 from "../assets/grocery.png";
+import imageUrl3 from "../assets/leg.jpg";
+// target_url: "https://getitfoodie.com/menu/17";
+import imageUrl2 from "../assets/paneer.jpg";
+import imageUrl4 from "../assets/vegetables.jpg";
+
 
 
 const demoOffer = [
@@ -27,11 +22,12 @@ const demoOffer = [
     // description: "Best Chinese Food",
     // action: "some url",
     imageUrl: imageUrl1,
+    target_url: "/menu/17",
   },
   {
     // title: "Pure & Fresh Foods",
     // description: "Family Food",
-    // action: "click me",
+    // action: "click me",O
     imageUrl: imageUrl2,
     //imageUrl: "https://source.unsplash.com/random",
   },
@@ -50,7 +46,7 @@ const demoOffer = [
   {
     // title: "Grocery",
     // description: "Your Daily Essential",
-    // action: "Best One",
+    // action: "https://getitfoodie.com/menu/22",
     imageUrl: imageUrl5,
   },
 ];
@@ -88,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default (props) => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <Carousel
       swipeable={true}
@@ -108,6 +105,7 @@ export default (props) => {
           key={index}
           className={classes.offercard}
           elevation={3}
+          onClick={() => history.push(item.target_url)}
           style={{
             background: `linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(${item.imageUrl})`,
             // background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${item.imageUrl})`,
@@ -118,11 +116,9 @@ export default (props) => {
           <Typography variant={"h6"}> {item.title}</Typography>
           <div>
             <Typography variant={"subtitle1"}>
-              {" "}
               <small>{item.description} </small>
             </Typography>
             <Button variant={"text"} size={"small"} color={"primary"}>
-              {" "}
               {item.action}
             </Button>
           </div>

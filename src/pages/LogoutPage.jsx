@@ -14,7 +14,7 @@ const LogoutPage = () => {
 
   setInterval(() => {
     setTimer(timer - 1);
-  }, 1000);
+  }, 0);
 
   return timer ? (
     <Container maxWidth={"sm"}>

@@ -69,7 +69,7 @@ export default (props) => {
           <Chip
             className={classes.track}
             color="primary"
-            label="Track my order"
+            label="Track My Order"
             onClick={() => {
               history.push("/orderHistory");
             }}

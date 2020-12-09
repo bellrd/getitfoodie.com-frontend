@@ -136,22 +136,31 @@ export default (props) => {
                                 <ExpansionPanelSummary expandIcon={<ExpandMore/>}>
                                     <Grid container spacing={2}>
                                         <Grid item xs={4}>
-                                            <Typography> <b> #{order.id} </b></Typography>
+                                            <Typography> <b> ID {order.id} </b></Typography>
                                         </Grid>
-                                        <Grid item xs={4}>
-                                            <Typography
-                                                variant={"body2"}> On {order.date} from {order.merchandise}</Typography>
-                                        </Grid>
-                                        <Grid item xs={4}>
+                                        {/* <Grid item xs={4}> */}
+                                            {/* <Typography */}
+                                                {/* variant={"body2"}> On {order.date} from {order.merchandise}</Typography> */}
+                                        {/* </Grid> */}
+                                        {/* Me Shivam made change below for showing order status in bold & attractive. */}
+                                        <Grid item xs={4}> 
                                             <Typography color={"primary"}
-                                                        variant={"subtitle1"}> {order.current_status}</Typography>
+                                                        style={{
+                                                            fontSize : "3vh",
+                                                            fontWeight: "bold",
+                                                            color: "blue",
+                                                        }}
+                                                        variant={"subtitle1"}> {order.current_status} </Typography>
                                         </Grid>
+                                        {/* Me End */}
                                     </Grid>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails>
                                     <TableContainer component={Paper} elevation={0} variant={"outlined"}>
                                         <Table>
                                             <caption> {order.address.detail + " " + order.address.landmark} </caption>
+                                            {/* <Typography */}
+                                            <caption> On {order.date} from {order.merchandise}</caption>
                                             <TableHead>
                                                 <TableRow>
                                                     <TableCell align={"center"}> <b> Name </b> </TableCell>
@@ -170,7 +179,7 @@ export default (props) => {
                                                 ))}
                                             </TableBody>
                                         </Table>
-			    
+			    {/* Me Shivam made change below for showing Total Bal. in History. */}
         <Divider variant="fullWidth" />
           <div className={classes.second}>
             <span
@@ -194,6 +203,7 @@ export default (props) => {
               ₹ {order.total}
             </span>
           </div>
+          {/* Me End */}
           
                                     </TableContainer>
 

@@ -45,6 +45,14 @@ const useStyles = makeStyles(theme => ({
     color: "white",
     fontWeight: "bolder"
   },
+  moticeTitle: {
+    marginTop: theme.spacing(3),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bolder",
+    textDecoration: "underline",
+    color: theme.palette.primary.main
+  },
   vendorTitle: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(2),
@@ -87,6 +95,32 @@ export default props => {
 
       <Container maxWidth={"xl"}>
         <CssBaseline />
+
+
+        {/* editing start */}
+
+        <Typography 
+        variant={"h6"}
+        component="h3"
+        padding="9px"
+        // variant="h2"
+        align="center"
+        // backgroundColor="textPrimary"
+        color={"#61DBFB"}
+        // color="textPrimary"
+        // gutterBottom
+
+        className={classes.noticeTitle}>
+          {""}
+          Services Available By 11:00 A.M To 9:30 P.M
+        </Typography>
+
+
+
+        {/* editing end */}
+
+
+
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {""}
           Click Me Below On Slider{" "}

@@ -2,6 +2,13 @@ import {login, logout} from "./auth";
 import {addOneItem, deleteItem, initialize_cart, removeOneItem} from "./cart";
 import {address_selected, order_placed} from "./order";
 
+
+
+
+
+
+
+
 let reducer = (state, action) => {
     switch (action.type) {
         case "LOGIN":

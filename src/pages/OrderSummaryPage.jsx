@@ -198,13 +198,14 @@ export default (props) => {
               setPayment_method(e.target.value);
             }}
           >
-            {order.total >= 800
+            {order.total >= 600000
               ? ["ONLINE"].map((option, index) => (
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
                 ))
-              : ["COD", "ONLINE"].map((option, index) => (
+              : ["COD"].map((option, index) => (
+              // : ["COD","ONLINE"].map((option, index) => (
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
@@ -222,17 +223,21 @@ export default (props) => {
 
           <div className={classes.second}>
             <span> Delivery Charge </span>
-            <span> {order.delivery_charge}</span>
+            <span> {order.delivery_charge === 0 ? "Delivery Free" : order.delivery_charge }</span>
+                {/* if (order.delivery_charge === 0)
+                .then ("Free Delivery")  */}
           </div>
           <Divider variant="fullWidth" />
           <div className={classes.second}>
             <span>Gst (tax)</span>
-            <span> {order.tax}</span>
+            {/* <span> {order.tax}</span> */}
+            <span> {order.tax === 0 ? "Tax Free" : order.tax }</span>
           </div>
 
           <Divider variant="fullWidth" />
           <div className={classes.second}>
             <span> Coupon Discount </span>
+            {/* <span> -{order.discount}</span> */}
             <span> -{order.discount}</span>
           </div>
           <Divider variant="fullWidth" />

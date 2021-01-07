@@ -211,7 +211,7 @@ export default (props) => {
                         </Fab>
                     </Hidden>
                 </Container>
-                <Footer/>
+                {/* <Footer/> */}
 
 
                 <Dialog fullWidth maxWidth={"lg"} aria-labelledby="simple-dialog-title" open={showFilterDialog}

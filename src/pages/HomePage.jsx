@@ -19,6 +19,7 @@ import NoticePopup from "../components/NoticePopup";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8)
   },
   heroContent: {
@@ -69,7 +70,7 @@ export default props => {
     <React.Fragment>
       <AppBar />
       {/* Hero content */}
-      <div className={classes.heroContent}>
+      {/* <div className={classes.heroContent}>
         <Container maxWidth="sm">
           <Typography
             component="h1"
@@ -90,7 +91,7 @@ export default props => {
           various local shop and restaurents and delivers their food and items to its customer. 
           </Typography>
         </Container>
-      </div>
+      </div> */}
       {/* end --hero content */}
 
       <Container maxWidth={"xl"}>
@@ -99,7 +100,7 @@ export default props => {
 
         {/* editing start */}
 
-        <Typography 
+        {/* <Typography 
         variant={"h6"}
         component="h3"
         padding="9px"
@@ -113,7 +114,7 @@ export default props => {
         className={classes.noticeTitle}>
           {""}
           Services Available By 11:00 A.M To 9:30 P.M
-        </Typography>
+        </Typography> */}
 
 
 
@@ -123,24 +124,24 @@ export default props => {
 
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {""}
-          Click Me Below On Slider{" "}
+           Click Me Below On Slider{" "}
         </Typography>
-        <Box mt={2}>
+        <Box mt={1}>
           <CssBaseline />
           <Slider />
         </Box>
       </Container>
 
       <Container maxWidth={"lg"}>
-        <Typography variant={"h6"} className={classes.vendorTitle}>
+        <Typography variant={"h6"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
-          Get-it Popular Vendors{" "}
+          Welcome to Tomestry{" "}
         </Typography>
         <Grid container spacing={4}>
           <MerchandiseCardList />
         </Grid>
       </Container>
-      <Container maxWidth={"lg"}>
+      {/* <Container maxWidth={"lg"}>
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {" "}
           All Available Vendors{" "}
@@ -148,7 +149,7 @@ export default props => {
         <Grid container spacing={4}>
           <PopularMerchandiseList />
         </Grid>
-      </Container>
+      </Container> */}
 
       <Container maxWidth={"xl"}>
         <CssBaseline />

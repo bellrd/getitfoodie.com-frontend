@@ -1,7 +1,7 @@
-ssh getit@getitfoodie.com "rm -rvf build/*"
-rsync -rvP build "getit@getitfoodie.com:/home/getit/"
+ssh tomestry@tomestry.com "rm -rvf build/*"
+rsync -rvP build "tomestry@tomestry.com:/home/tomestry/"
 gzip build/static/js/*
 gzip build/static/css/*
 gzip build/*js
-ssh getit@getitfoodie.com "sudo systemctl restart nginx"
+ssh tomestry@tomestry.com "sudo systemctl restart nginx"
 

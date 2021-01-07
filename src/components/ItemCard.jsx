@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {},
   cover: {
-    margin: theme.spacing(2),
+    margin: theme.spacing(1),
     width: 151
   },
   controls: {
@@ -116,7 +116,7 @@ export default props => {
         fullWidth={true}
         maxWidth={"sm"}
       >
-        <DialogTitle> Modify Size </DialogTitle>
+        <DialogTitle> Mark Size </DialogTitle>
         <DialogContent>
           <List>
             {item.prices.map((price, index) => {

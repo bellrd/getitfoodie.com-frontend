@@ -24,25 +24,20 @@ import { GlobalContext } from "../GlobalContext";
 const useStyles = makeStyles((theme) => ({
   card: {
     marginBottom: theme.spacing(1),
-    display: "flex",
-    width: "auto",
+    // display: "flex",
+    // width: "auto",
     justifyContent: "space-between",
     minHeight: 90,
     maxHeight: 180,
   },
   details: {
     display: "flex",
-    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    textAlign: "right",
-  },
-  content: {},
-  cover: {
-    margin: theme.spacing(1),
-    width: 120,
+    textAlign: "left",
   },
   controls: {
+    marginTop: theme.spacing(2),
     alignItems: "center",
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(2),
@@ -60,12 +55,6 @@ export default (props) => {
 
   return (
     <Card className={classes.card} elevation={5} variant={"elevation"}>
-      <CardMedia
-        className={classes.cover}
-        // image={item.item_photo || `${BASE_URL_IMAGE}/media/default_image.jpeg`}
-        image={item.item_photo}
-        title="Item photo"
-      />
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <small>

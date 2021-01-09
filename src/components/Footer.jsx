@@ -127,7 +127,7 @@ export default props => {
             <WhatsApp
               fontSize={"large"}
               className={classes.icons}
-              onClick={() => (window.location = "https://wa.me/919161419412")}
+              onClick={() => (window.location = "https://wa.me/918604850890")}
             />
           </Grid>
         </Grid>

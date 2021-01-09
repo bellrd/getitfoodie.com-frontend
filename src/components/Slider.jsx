@@ -14,6 +14,9 @@ import imageUrl3 from "../assets/leg.jpg";
 // target_url: "https://getitfoodie.com/menu/17";
 import imageUrl2 from "../assets/paneer.jpg";
 import imageUrl4 from "../assets/vegetables.jpg";
+import imageUrl6 from "../assets/offer.jpg";
+import imageUrl7 from "../assets/offer.jpg";
+import imageUrl8 from "../assets/offer.jpg";
 
 
 
@@ -29,9 +32,25 @@ const demoOffer = [
     // title: "Pure & Fresh Foods",
     // description: "Family Food",
     // action: "click me",O
+    imageUrl: imageUrl8,
+    //imageUrl: "https://source.unsplash.com/random",
+    // target_url: "/menu/2",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
     imageUrl: imageUrl2,
     //imageUrl: "https://source.unsplash.com/random",
     target_url: "/menu/2",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    // target_url: "/menu/6",
   },
   {
     // title: "Non-Vegetarian",
@@ -41,6 +60,14 @@ const demoOffer = [
     target_url: "/menu/1",
   },
   {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl7,
+    //imageUrl: "https://source.unsplash.com/random",
+    // target_url: "/menu/7",
+  },
+  {
     // title: "Fresh Vegetables",
     // description: "Care Of Health",
     // action: "Enjoy",
@@ -48,11 +75,27 @@ const demoOffer = [
     target_url: "/menu/17",
   },
   {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl8,
+    //imageUrl: "https://source.unsplash.com/random",
+    // target_url: "/menu/8",
+  },
+  {
     // title: "Grocery",
     // description: "Your Daily Essential",
     // action: "https://getitfoodie.com/menu/22",
     imageUrl: imageUrl5,
     target_url: "/menu/22",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl8,
+    //imageUrl: "https://source.unsplash.com/random",
+    // target_url: "/menu/2",
   },
 ];
 const responsive = {

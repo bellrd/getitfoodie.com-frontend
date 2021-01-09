@@ -29,6 +29,7 @@ import Loader from "../components/Loader";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import CloseIcon from "@material-ui/icons/Close";
 import { Rating } from "../components/MerchandiseCardList";
+import SearchIcon from "@material-ui/icons/Search";
 
 const styles = (theme) => ({
   root: {
@@ -111,6 +112,11 @@ const useStyles = makeStyles((theme) => ({
   filterFab: {
     position: "fixed",
     left: 20,
+    bottom: 20,
+  },
+  cartFab: {
+    position: "fixed",
+    right: 20,
     bottom: 20,
   },
 }));
@@ -238,16 +244,27 @@ export default (props) => {
           </Grid>
           <Hidden mdUp>
             <Fab
-              variant={"extended"}
+              // variant={"extended"}
               color={"secondary"}
               className={classes.filterFab}
               onClick={() => {
                 setShowFilterDialog(true);
               }}
             >
-              Filters
+              <SearchIcon />
             </Fab>
           </Hidden>
+
+          <Fab
+            variant={"extended"}
+            color={"secondary"}
+            className={classes.cartFab}
+            onClick={() => {
+              history.push("/cart");
+            }}
+          >
+            Proceed
+          </Fab>
         </Container>
         {/* <Footer/> */}
 

@@ -135,7 +135,7 @@ export default function SignUp() {
         console.log({ error });
         setDisableSubmit(false);
       });
-    setDisableSubmit(false);
+    // setDisableSubmit(false);
   };
 
   if (step === 1) {

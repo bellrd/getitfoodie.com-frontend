@@ -24,16 +24,16 @@ export default function NoticePopup(props) {
         marginBottom: "0rem",
         marginTop:"-1rem",
       }} >Dear Customer</h2>
-      <h3>Firstly Thank You Very Much to Being with Get-it.</h3>
-      <h3>Get-it Foodie always use to sale all Goods & Services on Restaurants Price. All price for prodct on website is same as Restaurants Menu.</h3>
-      <h3>Get-it never show Fake Price other than Restaurants Menu Price.</h3>
-      <h3>Get-it honestly charge a nominal delivery charge from you by showing at last billing page, but never take any mix charges in price of your order.</h3>
-      <h3>Ask your query on whatsapp or call at 63066 83868</h3>
-      {/* <a href="https://wa.me/916306683868">Contect Us</a> */}
+      <h3>Firstly Thank You Very Much to Being with Tomestry.</h3>
+      <h3>Tomestry Foodie always use to sale all Goods & Services on Restaurants Price. All price for prodct on website is same as Restaurants Menu.</h3>
+      <h3>Tomestry never show Fake Price other than Restaurants Menu Price.</h3>
+      <h3>Tomestry honestly charge a nominal delivery charge from you by showing at last billing page, but never take any mix charges in price of your order.</h3>
+      <h3>Ask your query on whatsapp or call at 91614 19412</h3>
+      {/* <a href="https://wa.me/919161419412">Contect Us</a> */}
       {/* <h3
               fontSize={"large"}
               // className={classes.icons}
-              onClick={() => (window.location = "https://wa.me/916306683868")}
+              onClick={() => (window.location = "https://wa.me/919161419412")}
       > contact us </h3> */}
        
       </DialogContent>
@@ -46,7 +46,7 @@ export default function NoticePopup(props) {
       <WhatsApp
               fontSize={"large"}
               // className={classes.icons}
-              onClick={() => (window.location = "https://wa.me/916306683868?text=*Hi, I Need Support.*")}
+              onClick={() => (window.location = "https://wa.me/919161419412?text=*Hi, I Need Support.*")}
             />
       <h4
               fontSize={"large"} style={{
@@ -55,8 +55,8 @@ export default function NoticePopup(props) {
               }}
               // className={classes.icons}
               
-              onClick={() => (window.location = "https://wa.me/916306683868?text=*Hi, I Need Support.*")}
-              // "https://wa.me/916306683868?text=Hi"
+              onClick={() => (window.location = "https://wa.me/919161419412?text=*Hi, I Need Support.*")}
+              // "https://wa.me/919161419412?text=Hi"
               // <a href="tel:123-456-7890p123">CLICK TO CALL</a>
       > Click For Help </h4>
         <Button

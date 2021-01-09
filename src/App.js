@@ -23,6 +23,7 @@ import ErrorPage from "./pages/ErrorPage";
 import ProfilePage from "./pages/ProfilePage";
 import PastOrderPage from "./pages/PastOrderPage";
 import firebase from "./pages/firebase";
+import StaffProfile from "./pages/StaffProfile";
 
 const App = (props) => {
   return (
@@ -57,6 +58,7 @@ const App = (props) => {
               <Route path={"/pay-online"} exact component={PayOnline} />
               <Route path={"/success/:action?"} exact component={SuccessPage} />
               <Route path="/failed/:message?" component={ErrorPage} />
+              {/* <Route path={"/staffprofile"} exact component={StaffProfile}/> */}
               <Route component={Error404Page} />
             </Switch>
           </div>

@@ -13,7 +13,7 @@ const theme = createMuiTheme({
     },
     typography: {
         fontFamily: [
-            '"Nunito"',
+            // '"Nunito"',
             '"Helvetica Neue"',
             '"Arial"',
             '"sans-serif"',

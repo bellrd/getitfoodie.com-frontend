@@ -124,7 +124,8 @@ export default props => {
 
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {""}
-           Click Me Below On Slider{" "}
+           .{" "}
+           {/* Click Me Below On Slider{" "} */}
         </Typography>
         <Box mt={1}>
           <CssBaseline />

@@ -236,7 +236,7 @@ export default (props) => {
 
           <Divider variant="fullWidth" />
           <div className={classes.second}>
-            <span> Coupon Discount </span>
+            <span> Discount </span>
             {/* <span> -{order.discount}</span> */}
             <span> -{order.discount}</span>
           </div>

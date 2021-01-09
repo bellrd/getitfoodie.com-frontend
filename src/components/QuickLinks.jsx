@@ -24,32 +24,32 @@ const useStyles = makeStyles(theme => ({
 const quickLinks = [
   {
     title: "Green vegetables & Fruits",
-    target_url: "https://getitfoodie.com/menu/17",
+    target_url: "https://tomestry.com/menu/17",
     image_url: `${BASE_URL_IMAGE}/media/veg_fruits.jpg`
   },
   {
     title: "Food & Grocery Items",
-    target_url: "https://getitfoodie.com/menu/22",
+    target_url: "https://tomestry.com/menu/22",
     image_url: `${BASE_URL_IMAGE}/media/grocery.jpg`
   },
   {
     title: "Food & Grocery Items",
-    target_url: "https://getitfoodie.com/menu/22",
+    target_url: "https://tomestry.com/menu/22",
     image_url: `${BASE_URL_IMAGE}/media/grocery.jpg`
   },
   {
     title: "Food & Grocery Items",
-    target_url: "https://getitfoodie.com/menu/22",
+    target_url: "https://tomestry.com/menu/22",
     image_url: `${BASE_URL_IMAGE}/media/grocery.jpg`
   },
   {
     title: "Food & Grocery Items",
-    target_url: "https://getitfoodie.com/menu/22",
+    target_url: "https://tomestry.com/menu/22",
     image_url: `${BASE_URL_IMAGE}/media/grocery.jpg`
   },
   {
     title: "Affordable Tiffin Services",
-    target_url: ":////getitfoodie.com/menu/22",
+    target_url: ":////tomestry.com/menu/22",
     image_url: `${BASE_URL_IMAGE}/media/tiffin.jpg`
   }
 ];

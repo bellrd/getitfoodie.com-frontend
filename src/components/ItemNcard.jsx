@@ -107,7 +107,7 @@ export default (props) => {
         fullWidth={true}
         maxWidth={"sm"}
       >
-        <DialogTitle> Mark Size </DialogTitle>
+        <DialogTitle> Define Size </DialogTitle>
         <DialogContent>
           <List>
             {item.prices.map((price, index) => {

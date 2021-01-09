@@ -131,7 +131,7 @@ export default (props) => {
                 </div>
               </div>
               <div className={classes.additional_detail}>
-                <small> {merchandise.additional_detail.slice(0, 20)} </small>
+                <small> {merchandise.additional_detail.slice(0, 50)} </small>
               </div>
             </Card>
           </Grid>

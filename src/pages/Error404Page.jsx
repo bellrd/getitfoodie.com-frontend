@@ -16,7 +16,7 @@ export default (props) => {
                     <p></p>
                     <p>OR</p>
                     <p></p>
-                    <p><b>Call To tomestry Administration For More Help +91 6306683868</b></p>
+                    <p><b>Call To tomestry Administration For More Help +91 9161419412</b></p>
                     <a href="/">Back to homepage</a>
                 </div>
             </div>

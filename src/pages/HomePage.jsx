@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main
   },
   vendorTitle: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(2),
     fontWeight: "bolder",
@@ -134,9 +134,13 @@ export default props => {
       </Container>
 
       <Container maxWidth={"lg"}>
-        <Typography variant={"h6"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
+        <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
           Welcome to Tomestry{" "}
+        </Typography>
+        <Typography body={"h6"} align={"center"} style={{color:"blue"}} className={classes.vendorTitle}>
+          {" "}
+          Services Available From 11:00 A.M To 9:30 P.M{" "}
         </Typography>
         <Grid container spacing={4}>
           <MerchandiseCardList />

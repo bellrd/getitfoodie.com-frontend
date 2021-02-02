@@ -114,14 +114,14 @@ export default props => {
               fontSize={"large"}
               className={classes.icons}
               onClick={() =>
-                (window.location = "https://facebook.com/")
+                (window.location = "https://www.facebook.com/tomestry.foodie/")
               }
             />
             <Instagram
               fontSize={"large"}
               className={classes.icons}
               onClick={() =>
-                (window.location = "https://instagram.com/")
+                (window.location = "https://instagram.com/Tomestry_Foodie/")
               }
             />
             <WhatsApp

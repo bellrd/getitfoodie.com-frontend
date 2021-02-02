@@ -28,7 +28,7 @@ export default function NoticePopup(props) {
       <h3>Please Use Offer Coupon on Cart Page.</h3>
       {/* <h3>Tomestry Foodie always use to sale all Goods & Services on Restaurants Price. All price for prodct on website is same as Restaurants Menu.</h3>
       <h3>Tomestry never show Fake Price other than Restaurants Menu Price.</h3> */}
-      <h3>Ask your query on whatsapp or call at 86048 50890</h3>
+      <h3>Ask your query on whatsapp or call at 8604850890</h3>
       {/* <a href="https://wa.me/918604850890">Contect Us</a> */}
       {/* <h3
               fontSize={"large"}

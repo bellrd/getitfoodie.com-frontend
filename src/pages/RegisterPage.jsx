@@ -71,6 +71,7 @@ export default function SignUp() {
     last_name: "",
     mobile_number: "",
     password: "",
+    referrer_code: "",
     email: "", // *workaround* required to send valid post request (backend need to be changed)
   });
   const [firstNameFieldError, setFirstNameFieldError] = useState(false);
@@ -190,6 +191,16 @@ export default function SignUp() {
                   label="Mobile Number"
                   name="mobile_number"
                   autoComplete="mobile"
+                  onChange={handleInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  fullWidth
+                  id="referrer_code"
+                  label="Referal code"
+                  name="referrer_code"
                   onChange={handleInput}
                 />
               </Grid>

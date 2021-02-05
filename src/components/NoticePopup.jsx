@@ -20,15 +20,27 @@ export default function NoticePopup(props) {
       {/* <DialogTitle >Respected Customers</DialogTitle> */}
       <DialogContent>
       <h2 align="center"   style={{
-        color: "red",
+        color: "purple",
+        fontWeight: 'bold',
         marginBottom: "0rem",
+        textDecorationLine: 'underline',
         marginTop:"-1rem",
       }} >Dear Foodies</h2>
-      <h3>You are Most Welcome in Tomestry.</h3>
-      <h3>Please Use Offer Coupon on Cart Page.</h3>
+      <h3
+      style={{
+      color:"blue"
+      }}
+      >You are Most Welcome in Tomestry.</h3>
+      <h3
+      style={{
+        color:"green"
+        }}>Please Use Offer Coupon on Cart Page if Available.</h3>
       {/* <h3>Tomestry Foodie always use to sale all Goods & Services on Restaurants Price. All price for prodct on website is same as Restaurants Menu.</h3>
       <h3>Tomestry never show Fake Price other than Restaurants Menu Price.</h3> */}
-      <h3>Ask your query on whatsapp or call at 8604850890</h3>
+      <h3
+      style={{
+        color:"purple"
+        }}>Ask your query on whatsapp or call at 8604850890</h3>
       {/* <a href="https://wa.me/918604850890">Contect Us</a> */}
       {/* <h3
               fontSize={"large"}
@@ -40,18 +52,24 @@ export default function NoticePopup(props) {
       <DialogActions>
       <Call
               fontSize={"large"}
+              style={{
+                color:"orange"
+                }}
               // className={classes.icons}
               onClick={() => (window.location = "tel:+918604850890")}
             />
       <WhatsApp
               fontSize={"large"}
+              style={{
+                color:"green"
+                }}
               // className={classes.icons}
               onClick={() => (window.location = "https://wa.me/918604850890?text=*Hi, I Need Support.*")}
             />
       <h4
               fontSize={"large"} style={{
               // marginRight: "7rem"
-              color : "blue"
+              color : "brown"
               }}
               // className={classes.icons}
               
@@ -61,6 +79,9 @@ export default function NoticePopup(props) {
       > Click For Help </h4>
         <Button
           variant={"contained"}
+          style={{
+            color:"yellow"
+            }}
           color={"primary"}
           onClick={() => setOpen(false)}
         >

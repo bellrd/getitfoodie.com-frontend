@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     },
     form: {},
     submit: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(0),
         borderRadius: 0
     }
 }));
@@ -119,7 +119,7 @@ export default (props) => {
 
                         </div>
 
-                        <Paper className={classes.info} elevation={3}>
+                        <Paper className={classes.info}  elevation={3}>
                             <List subheader={<ListSubheader disableSticky> {profile.full_name}</ListSubheader>}>
                                 {/* <ListItem>
                                     <ListItemText> Email: </ListItemText>
@@ -152,20 +152,33 @@ export default (props) => {
                                 </ListItem>
 
                                 <ListItem>
-                                    <ListItemText> Your successful referral </ListItemText>
+                                    <ListItemText
+                                    > My Successful Referral Connections </ListItemText>
                                     <ListItemSecondaryAction>
                                         <Typography variant={"subtitle2"}> {profile.refer_count}</Typography>
                                     </ListItemSecondaryAction>
                                 </ListItem>
                             </List>
   
-                            <Button variant="contained" color="secondary" onClick={() => {
+                            <Button variant="contained" color="primary" onClick={() => {
                                 console.log(navigator.share)
                                 if (navigator.share) {
                                     navigator.share({
-                                        title: 'S hare referral',
-                                        text: 'order kar lo ' + profile.referral_code,
-                                        url: 'https://tomestry.com/register/',
+                                        title: 'Referral Code',
+                                        text: 'Hi, I am Tomestry Food Delivery Company User, '  + profile.first_name + " " + profile.last_name + '. Please Register your Tomestry Account using my Referral Code. If you use my code, we both will get Tomestry Cash back of *10 Rs.* after your 1st Successful Order.  *My Referral Code is* ' +profile.referral_code ,
+                                        // text: 'I am Tomestry Food Delivery User. ' + profile.first_name  + " " + profile.last_name,
+                                        // text: 'Please Register your Tomestry Account using my Referral Code. If you use my code, we both will get Tomestry Cash back of 10 Rs. after your 1st Successful Order. ' + profile.referral_code,
+                                        // text: 'Tomesty use to deliver all its goods and services on Shop/Restaurent Price. Tomestry never takes any increased price on item than the price is at Restaurent. ',
+                                        // text: 'Tomestry use to deliver :- ',
+                                        // text: 'Family Food. ',
+                                        // text: 'Chinese Foods ',
+                                        // text: 'Rolls ',
+                                        // text: 'Shake & Juices ',
+                                        // text: 'Green Vegetables ',
+                                        // text: 'Tiffin Services ',
+                                        // text: 'Veg & Non-Veg all type of Foods. ',
+                                        // text: 'Web & Android Apps Developments ',
+                                        url: 'https://tomestry.com',
                                     })
                                         .then(() => console.log('Successful share'))
                                         .catch((error) => console.log('Error sharing', error));
@@ -175,11 +188,18 @@ export default (props) => {
                                 }
                             }
                             }>
-                                share
+                                Share Referral
                             </Button>
+                            
                            
                         </Paper>
+                        <text
+                        style={{
 
+                        }}
+                        
+                        >If You Are Referring Your Referral Connections To Your Friends or Loving One and as he/she complete their Signup on Tomestry and as their 1st order get delivered Successfully ,You both will get Rs.10 in Tomestry Wallet.</text>
+                        <text>As much Your Connections get increased,accordingly you will get Rs.10 on each Successful Connection.</text>
                         <section id="updatePassword">
                             <Paper elevation={3} className={classes.update}>
                                 <form noValidate className={classes.form}>

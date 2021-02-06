@@ -57,12 +57,28 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "underline",
     color: theme.palette.primary.main
   },
-  vendorTitle: {
+  timeTitle: {
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(2),
     fontWeight: "bolder",
     textDecoration: "underline",
+    color: theme.palette.primary.main
+    },
+  vendorTitle: {
+  marginTop: theme.spacing(1),
+  marginLeft: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  fontWeight: "bolder",
+  textDecoration: "underline",
+  color: theme.palette.primary.main
+  },
+  noticeTitle: {
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bolder",
+    // textDecoration: "underline",
     color: theme.palette.primary.main
   }
 }));
@@ -141,7 +157,16 @@ export default props => {
           {" "}
           Welcome to Tomestry{" "}
         </Typography>
-        <Typography body={"h6"} align={"center"} style={{color:"blue"}} className={classes.vendorTitle}>
+        <Typography body={"h6"} align={"center"} style={{color:"blue"}} className={classes.noticeTitle}>
+          {" "}
+          'Hi Dear, Now Tomestry Has introduced Refer and Earn Feature, Now You can send your Referral Code to your friend and ask them to Sigup his Tomestry Account by using your Referral Code. As he attempt 1st Successful Order Delivered with Tomestry, You both will get Tomestry Wallet Cash Back Of 10 Rs.  Go to Your Profile And Click on Share Button to Reffer and Earn. {" "}
+        </Typography>
+        
+        
+        
+        
+        
+        <Typography body={"h6"} align={"center"} style={{color:"red"}} className={classes.timeTitle}>
           {" "}
           Services Available From 11:00 A.M To 9:30 P.M{" "}
         </Typography>

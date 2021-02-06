@@ -14,7 +14,7 @@ import imageUrl3 from "../assets/leg.jpg";
 // target_url: "https://getitfoodie.com/menu/17";
 import imageUrl2 from "../assets/paneer.jpg";
 import imageUrl4 from "../assets/vegetables.jpg";
-// import imageUrl6 from "../assets/offer.jpg";
+import imageUrl6 from "../assets/refer2.jpg";
 // import imageUrl7 from "../assets/offer.jpg";
 // import imageUrl8 from "../assets/offer.jpg";
 
@@ -28,14 +28,14 @@ const demoOffer = [
     imageUrl: imageUrl1,
     target_url: "/menu/4",
   },
-  // {
-  //   // title: "Pure & Fresh Foods",
-  //   // description: "Family Food",
-  //   // action: "click me",O
-  //   // imageUrl: imageUrl8,
-  //   //imageUrl: "https://source.unsplash.com/random",
-  //   // target_url: "/menu/2",
-  // },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
+  },
   {
     // title: "Pure & Fresh Foods",
     // description: "Family Food",
@@ -44,14 +44,14 @@ const demoOffer = [
     //imageUrl: "https://source.unsplash.com/random",
     target_url: "/menu/2",
   },
-  // {
-  //   // title: "Pure & Fresh Foods",
-  //   // description: "Family Food",
-  //   // action: "click me",O
-  //   // imageUrl: imageUrl6,
-  //   //imageUrl: "https://source.unsplash.com/random",
-  //   // target_url: "/menu/6",
-  // },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
+  },
   {
     // title: "Non-Vegetarian",
     // description: "Fresh Non-Veg",
@@ -59,14 +59,14 @@ const demoOffer = [
     imageUrl: imageUrl3,
     target_url: "/menu/1",
   },
-  // {
-  //   // title: "Pure & Fresh Foods",
-  //   // description: "Family Food",
-  //   // action: "click me",O
-  //   // imageUrl: imageUrl7,
-  //   //imageUrl: "https://source.unsplash.com/random",
-  //   // target_url: "/menu/7",
-  // },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
+  },
   {
     // title: "Fresh Vegetables",
     // description: "Care Of Health",
@@ -74,14 +74,14 @@ const demoOffer = [
     imageUrl: imageUrl4,
     target_url: "/menu/17",
   },
-  // {
-  //   // title: "Pure & Fresh Foods",
-  //   // description: "Family Food",
-  //   // action: "click me",O
-  //   // imageUrl: imageUrl8,
-  //   //imageUrl: "https://source.unsplash.com/random",
-  //   // target_url: "/menu/8",
-  // },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "profile",
+  },
   {
     // title: "Grocery",
     // description: "Your Daily Essential",
@@ -89,14 +89,14 @@ const demoOffer = [
     imageUrl: imageUrl5,
     target_url: "/menu/22",
   },
-  // {
-  //   // title: "Pure & Fresh Foods",
-  //   // description: "Family Food",
-  //   // action: "click me",O
-  //   // imageUrl: imageUrl8,
-  //   //imageUrl: "https://source.unsplash.com/random",
-  //   // target_url: "/menu/2",
-  // },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
+  },
 ];
 const responsive = {
   desktop: {

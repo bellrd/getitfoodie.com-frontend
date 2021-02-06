@@ -63,7 +63,7 @@ export default (props) => {
           <small> {item.tags.includes("VEG") ? "VEG" : "NON-VEG"} </small>
           <br />
           <small>
-            {item.prices[0].size} at {item.prices[0].getit_mrp}
+            {item.prices[0].size} at {item.prices[0].regular_mrp}
           </small>
         </CardContent>
         <div className={classes.controls}>
@@ -120,7 +120,7 @@ export default (props) => {
                   <ListItemText>
                     {" "}
                     <small>
-                      {price.size} <b> {price.getit_mrp} </b>{" "}
+                      {price.size} <b> {price.regular_mrp} </b>{" "}
                     </small>
                   </ListItemText>
                   <ListItemSecondaryAction>
@@ -138,7 +138,7 @@ export default (props) => {
                               name: item.name,
                               size: price.size,
                               category_id: category_id,
-                              price: price.getit_mrp,
+                              price: price.regular_mrp,
                               merchandise_id: merchandise_id,
                             },
                           });
@@ -166,7 +166,7 @@ export default (props) => {
                               id: item.id,
                               name: item.name,
                               size: price.size,
-                              price: price.getit_mrp,
+                              price: price.regular_mrp,
                               category_id: category_id,
                               merchandise_id: merchandise_id,
                             },

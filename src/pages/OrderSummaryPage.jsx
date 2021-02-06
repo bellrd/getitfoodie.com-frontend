@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
   },
   payment: {
-    marginBottom: theme.spacing(2),
-    padding: theme.spacing(3),
+    marginBottom: theme.spacing(1.5),
+    padding: theme.spacing(1),
     marginTop: theme.spacing(2),
   },
   fab: {
@@ -63,12 +63,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    fontFamily: "Nunito",
+    // fontFamily: "Nunito",
     textTransform: "capitalize",
-    fontSize: "14px",
+    fontSize: "12px",
     color: "#333",
-    marginBottom: theme.spacing(2),
-    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
   },
 }));
 
@@ -212,17 +212,23 @@ export default (props) => {
                 ))}
           </Select>
         </Paper>
+        <h2
+        style={{
+          textAlign:"center",
+          textDecoration:"underline"
+        }}
+        >Billing Page</h2>
 
         <Paper className={classes.first} elevation={3}>
           <div className={classes.second}>
-            <span> Item total </span>
+            <span> Item Total </span>
             <span> {order.vendor_total}</span>
           </div>
 
           <Divider variant="fullWidth" />
 
           <div className={classes.second}>
-            <span> Delivery Charge </span>
+            <span> Delivery Fee </span>
             <span> {order.delivery_charge === 0 ? "Delivery Free" : order.delivery_charge }</span>
                 {/* if (order.delivery_charge === 0)
                 .then ("Free Delivery")  */}
@@ -235,35 +241,61 @@ export default (props) => {
           </div>
 
           <Divider variant="fullWidth" />
-          <div className={classes.second}>
-            <span> Discount </span>
+          <div style={{
+            color:"green",
+            fontWeight:"bold",
+            fontSize:"19px"
+
+          }} 
+          className={classes.second}>
+            <span
+            style={{
+              color:"green",
+              fontWeight:"bold",
+              fontSize:"19px"
+            }} 
+            
+            > Offer/Discount </span>
             {/* <span> -{order.discount}</span> */}
             <span> -{order.discount}</span>
           </div>
           <Divider variant="fullWidth" />
-          <div className={classes.second}>
-            <span> Wallet discount </span>
+          <div 
+          style={{
+            color:"green",
+            fontWeight:"bold",
+            fontSize:"19px"
+
+          }} 
+          className={classes.second}>
+            <span> Wallet Discount </span>
             <span> -{order.from_wallet}</span>
           </div>
           <Divider variant="fullWidth" />
           <div className={classes.second}>
             <span
               style={{
-                fontSize: "3vh",
+                fontSize: "2vh",
                 fontWeight: "bold",
                 color: "blue",
               }}
             >
-              TOTAL
+              TOTAL TO PAY
             </span>
             <span
               style={{
-                fontSize: "5vh",
+                fontSize: "3vh",
                 fontWeight: "bold",
-                color: "blue",
+                color: "blue"
               }}
             >
               ₹ {order.total}
+              <del
+              style={{
+                color: "red",
+                fontSize:"2vh"
+              }}
+              > {order.total + order.discount}</del>  
             </span>
           </div>
         </Paper>
@@ -278,7 +310,15 @@ export default (props) => {
         >
           {disableSubmit ? "Wait" : "Place Order"}
         </Fab>
+        <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >You Saved {""+""} {order.discount} Rs. on This Deal.</h2>
       </Container>
+      // <text>dasdsadasdas dsad a dsa ds ad d sa dsa </text>
     );
   }
 };

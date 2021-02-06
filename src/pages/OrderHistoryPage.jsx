@@ -196,7 +196,7 @@ export default (props) => {
                 fontSize: "5vh",
                 fontWeight: "bold",
                 color: "blue",
-                align: "right",
+                align: "right"
                 
               }}
             >

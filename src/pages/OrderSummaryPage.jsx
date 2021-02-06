@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "12px",
     color: "#333",
     marginBottom: theme.spacing(1),
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(0),
   },
 }));
 
@@ -212,6 +212,12 @@ export default (props) => {
                 ))}
           </Select>
         </Paper>
+        <text
+        style={{
+          textAlign:"center"
+
+        }}
+        >In Case if ONLINE Payment Option on Website is not Available then Simply Place Order as COD And You can Pay Online By Any Mode when Delivery Person will reach to You with your Order,If you want to pay Online.</text>
         <h2
         style={{
           textAlign:"center",
@@ -293,7 +299,7 @@ export default (props) => {
               <del
               style={{
                 color: "red",
-                fontSize:"2vh"
+                fontSize:"3vh"
               }}
               > {order.total + order.discount}</del>  
             </span>

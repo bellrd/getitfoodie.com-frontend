@@ -18,6 +18,16 @@ import { useHistory } from "react-router-dom";
 import theme from "../theme";
 import Loader from "./Loader";
 
+
+
+
+
+
+
+
+
+
+
 export const Rating = withStyles({
   iconFilled: {
     color: theme.palette.primary.main,
@@ -117,7 +127,15 @@ export default (props) => {
               <div className={classes.details}>
                 <div className={classes.first}>
                   <strong> {merchandise.name}</strong> <br />
-                  <small> {merchandise.location} </small>
+                  <small
+                  
+                  style={{
+                    color:"green",
+                    // fontWeight:""
+    
+                  }}
+                  
+                  > {merchandise.location} </small>
                 </div>
                 <div>
                   <Rating
@@ -130,8 +148,15 @@ export default (props) => {
                   <small>{merchandise.type}</small>
                 </div>
               </div>
-              <div className={classes.additional_detail}>
-                <small> {merchandise.additional_detail.slice(0, 50)} </small>
+              <div
+              style={{
+                color:"blue",
+                fontWeight:"bold"
+
+              }}
+                
+                className={classes.additional_detail}>
+                <small>{merchandise.additional_detail.slice(0, 50)} </small>
               </div>
             </Card>
           </Grid>

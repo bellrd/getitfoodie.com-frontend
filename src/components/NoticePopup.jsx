@@ -26,21 +26,22 @@ export default function NoticePopup(props) {
         textDecorationLine: 'underline',
         marginTop:"-1rem",
       }} >Dear Foodies</h2>
+      <h4
+      // style={{
+      // color:"blue"
+      // }}
+      >You are Most Welcome in Tomestry.</h4>
       <h3
       style={{
-      color:"blue"
-      }}
-      >You are Most Welcome in Tomestry.</h3>
-      <h3
-      style={{
-        color:"green"
-        }}>Please Use Offer Coupon on Cart Page if Available.</h3>
+        color:"blue"
+        }}>Please Use 20 % Offer Coupon on Cart Page.</h3>
       {/* <h3>Tomestry Foodie always use to sale all Goods & Services on Restaurants Price. All price for prodct on website is same as Restaurants Menu.</h3>
       <h3>Tomestry never show Fake Price other than Restaurants Menu Price.</h3> */}
-      <h3
-      style={{
-        color:"purple"
-        }}>Ask your query on whatsapp or call at 8604850890</h3>
+      <h4
+      // style={{
+      //   color:"purple"
+      //   }}
+        >Ask your query on whatsapp or call at 8604850890</h4>
       {/* <a href="https://wa.me/918604850890">Contect Us</a> */}
       {/* <h3
               fontSize={"large"}

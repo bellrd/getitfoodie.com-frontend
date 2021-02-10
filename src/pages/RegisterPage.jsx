@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(2),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -199,7 +199,7 @@ export default function SignUp() {
                   variant="outlined"
                   fullWidth
                   id="referrer_code"
-                  label="Referal code"
+                  label="Referal code For Cash Back."
                   name="referrer_code"
                   onChange={handleInput}
                 />
@@ -239,6 +239,18 @@ export default function SignUp() {
                   }
                   label="I want to receive offers, promotions and updates via SMS." //we don't handle this checkbox anyway
                 />
+                <text
+                        style={{
+
+                        }}
+                        
+                        >If You Are Referring Your Referral Connections To Your Friends or Loving One and as he/she complete their Signup on Tomestry and as their 1st order get delivered Successfully ,You both will get Rs.10 in Tomestry Wallet.</text>
+                        <text
+                        style={{
+
+                        }}
+                        
+                        >In Case if You are new on website and you don't have any Referral Code then You can use 9H4Y1X2F for Wallet Discount.</text>
               </Grid>
             </Grid>
             <Button

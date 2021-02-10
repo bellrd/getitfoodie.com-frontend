@@ -47,6 +47,14 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(2),
   },
+  offer: {
+    alignItems: "center",
+    marginTop:theme.spacing(-3),
+    color:"blue",
+    marginBottom:theme.spacing(0),
+    // paddingLeft: theme.spacing(1),
+    // paddingBottom: theme.spacing(2),
+  },
 }));
 
 export default (props) => {
@@ -119,6 +127,11 @@ export default (props) => {
         maxWidth={"sm"}
       >
         <DialogTitle> Mark Size </DialogTitle>
+        <div>
+        <DialogTitle
+        ><h6 className={classes.offer}>
+        Discount Coupon is At Next Page.</h6></DialogTitle>
+        </div>
         <DialogContent>
           <List>
             {item.prices.map((price, index) => {
@@ -201,8 +214,10 @@ export default (props) => {
           >
             Add
           </Button>
+          
         </DialogActions>
       </Dialog>
+      
     </Card>
   );
 };

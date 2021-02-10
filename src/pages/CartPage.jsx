@@ -96,10 +96,14 @@ const CartItem = (props) => {
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography variant={"subtitle2"} style={{ fontWeight: "bold" }}>
-            <small>{cart_item.name}</small>
+            <small
+            style={{
+              fontSize:"2vh",
+            }}
+            >{cart_item.name}</small>
           </Typography>
           <Typography variant="subtitle2" color="textSecondary">
-            <small>{cart_item.size}</small>
+            <small>{cart_item.size} x {cart_item.quantity} = {cart_item.price * cart_item.quantity}</small>
           </Typography>
         </CardContent>
         <div className={classes.controls}>
@@ -211,6 +215,15 @@ export default (props) => {
                 <b> Cart </b>{" "}
               </Typography>
             </div>
+            <text
+            style={{
+              align:"center",
+              color:"blue",
+              fontWeight:"bold",
+              fontSize:"2vh"
+
+            }}
+            >Apply Discount Coupon if Available Below.</text>
             <Paper elevation={3}>
               <List
                 subheader={
@@ -260,7 +273,9 @@ export default (props) => {
           <div>
             {coupons.length !== 0 ? (
               <Paper className={classes.coupon} elevation={3}>
-                <Typography variant={"subtitle2"} align={"left"}>
+                <Typography variant={"subtitle2"} align={"left"} style={{
+                  color:"green", fontWeight:"bold", fontSize:"3vh"
+                }}>
                   Select coupon.{" "}
                 </Typography>
 

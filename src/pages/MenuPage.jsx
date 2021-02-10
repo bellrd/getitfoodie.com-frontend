@@ -65,7 +65,7 @@ const DialogTitle = withStyles(styles)((props) => {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(6),
   },
   filterBar: {
     display: "flex",
@@ -73,9 +73,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
     padding: theme.spacing(1),
   },
+  offerBar: {
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: theme.spacing(-6),
+    padding: theme.spacing(0),
+  },
 
   main: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(0),
     justifyContent: "space-between",
   },
   categoryroot: {
@@ -176,11 +182,32 @@ export default (props) => {
               align={"left"}
               style={{ fontWeight: "bold" }}
             >
-              <small> {merchandise_name}</small>
+              <h3
+              style={{
+                color:"green",
+                textAlign:"center"
+
+              }}
+              
+              > {merchandise_name}</h3>
             </Typography>
-            <Hidden mdUp>
+            
+            {/* <Hidden mdUp>
               <Rating value={4.5} precision={0.5} color={"primary"} small />
-            </Hidden>
+            </Hidden> */}
+          </div>
+          <div className={classes.offerBar}
+          style={{
+            textAlign:"center"
+          }}
+          >
+          <h4
+          style={{color:"blue",
+          textAlign:"center"
+        }}
+          
+          
+          >Discount Coupon is at Next Page.</h4>
           </div>
 
           <Grid container spacing={3} className={classes.main}>

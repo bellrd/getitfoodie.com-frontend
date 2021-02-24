@@ -130,7 +130,7 @@ export default (props) => {
         <div>
         <DialogTitle
         ><h6 className={classes.offer}>
-        Discount Coupon is At Next Page.</h6></DialogTitle>
+        Coupon is At Next Page.</h6></DialogTitle>
         </div>
         <DialogContent>
           <List>

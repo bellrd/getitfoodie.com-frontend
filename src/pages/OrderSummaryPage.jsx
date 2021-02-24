@@ -288,7 +288,7 @@ export default (props) => {
             >
               TOTAL TO PAY
             </span>
-            <span
+            {/* <span
               style={{
                 fontSize: "3vh",
                 fontWeight: "bold",
@@ -302,7 +302,55 @@ export default (props) => {
                 fontSize:"3vh"
               }}
               > {order.total + order.discount}</del>  
-            </span>
+            </span> */}
+
+              {/* <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>  
+            </span> */}
+
+              <span> {order.discount === 0 ? <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              {/* <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>   */}
+            </span> : <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>  
+            </span> }</span>
+
+
           </div>
         </Paper>
 
@@ -316,13 +364,28 @@ export default (props) => {
         >
           {disableSubmit ? "Wait" : "Place Order"}
         </Fab>
-        <h2
+        {/* <h2
         style={{
           textAlign:"center",
           color:"green",
           fontWeight:"bold"
         }}
-        >You Saved {""+""} {order.discount} Rs. on This Deal.</h2>
+        >You Saved {""+""} {order.discount} Rs. on This Deal.</h2> */}
+        {/* order.from_wallet */}
+        <span> {order.discount === 0 ? <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >This Vendor is Already at Discount Price.</h2> : <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >You Saved {""+""} {order.discount} Rs. on This Deal.</h2> }</span>
+
       </Container>
       // <text>dasdsadasdas dsad a dsa ds ad d sa dsa </text>
     );

@@ -69,11 +69,13 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     bottom: 25,
+    zIndex:999,
   },
   checkoutMobile: {
     position: "fixed",
     right: 20,
     bottom: 15,
+    zIndex:999,
   },
   additional_detail: {
     marginTop: theme.spacing(2),
@@ -274,9 +276,9 @@ export default (props) => {
             {coupons.length !== 0 ? (
               <Paper className={classes.coupon} elevation={3}>
                 <Typography variant={"subtitle2"} align={"left"} style={{
-                  color:"green", fontWeight:"bold", fontSize:"3vh"
+                  color:"green", fontWeight:"bold", fontSize:"2vh"
                 }}>
-                  Select coupon.{" "}
+                  Select coupon (Coupon will apply on Non-Already Discounted Vendors).{" "}
                 </Typography>
 
                 <Select

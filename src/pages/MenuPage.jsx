@@ -207,7 +207,7 @@ export default (props) => {
         }}
           
           
-          >Discount Coupon is at Next Page.</h4>
+          >Coupon is at Next Page on selected Vendors Only.</h4>
           </div>
 
           <Grid container spacing={3} className={classes.main}>

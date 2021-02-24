@@ -162,7 +162,9 @@ export default (props) => {
   useEffect(() => {
     Axios.get(`${BASE_URL}/get-valid-coupon/`)
       .then((response) => {
-        setCoupons(response.data);
+        console.log("doomsday 001");
+        console.log(ctx.state.merchandise_id);
+        ctx.state.merchandise_id === "4" ? setCoupons([]) : setCoupons(response.data);
       })
       .catch((error) => {
         console.log("Coupon loading failed.");

@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   fab: {
     position: "fixed",
-    bottom: theme.spacing(4),
-    right: theme.spacing(4),
+    bottom: theme.spacing(2),
+    left: theme.spacing(4),
   },
   orderitems: {
     marginTop: theme.spacing(4),
@@ -217,7 +217,7 @@ export default (props) => {
           textAlign:"center"
 
         }}
-        >In Case if ONLINE Payment Option on Website is not Available then Simply Place Order as COD And You can Pay Online By Any Mode when Delivery Person will reach to You with your Order,If you want to pay Online.</text>
+        >You can also pay via any UPI app to our delivery executive.</text>
         <h2
         style={{
           textAlign:"center",

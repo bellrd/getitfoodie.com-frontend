@@ -49,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   offer: {
     alignItems: "center",
-    marginTop:theme.spacing(-3),
-    color:"blue",
-    marginBottom:theme.spacing(0),
+    marginTop: theme.spacing(-3),
+    color: "blue",
+    marginBottom: theme.spacing(0),
     // paddingLeft: theme.spacing(1),
     // paddingBottom: theme.spacing(2),
   },
@@ -122,15 +122,15 @@ export default (props) => {
 
       <Dialog
         open={showOptions}
-        disableBackdropClick
+        onBackdropClick={() => setShowOptions(false)}
         fullWidth={true}
         maxWidth={"sm"}
       >
         <DialogTitle> Mark Size </DialogTitle>
         <div>
-        <DialogTitle
-        ><h6 className={classes.offer}>
-        Coupon is At Next Page.</h6></DialogTitle>
+          <DialogTitle>
+            <h6 className={classes.offer}>Coupon is At Next Page.</h6>
+          </DialogTitle>
         </div>
         <DialogContent>
           <List>
@@ -140,68 +140,74 @@ export default (props) => {
                   cartitem.id === item.id && cartitem.size === price.size
               );
               return (
-                <ListItem key={index}>
-                  <ListItemText>
-                    {" "}
-                    <small>
-                      {price.size} <b> {price.regular_mrp} </b>{" "}
-                    </small>
-                  </ListItemText>
-                  <ListItemSecondaryAction>
-                    <ButtonGroup
-                      size={"small"}
-                      color={"secondary"}
-                      variant={"outlined"}
-                    >
-                      <IconButton
-                        onClick={() => {
-                          ctx.dispatch({
-                            type: "REMOVE_ONE_ITEM",
-                            payload: {
-                              id: item.id,
-                              name: item.name,
-                              size: price.size,
-                              category_id: category_id,
-                              price: price.regular_mrp,
-                              merchandise_id: merchandise_id,
-                            },
-                          });
-                        }}
+                <>
+                  <ListItem key={index}>
+                    <ListItemText>
+                      {" "}
+                      <small>
+                        {price.size} <b> ₹ {price.regular_mrp} </b> <br />
+                        <small>
+                          <i>{price.additional_detail} </i>{" "}
+                        </small>
+                      </small>
+                    </ListItemText>
+                    <ListItemSecondaryAction>
+                      <ButtonGroup
+                        size={"small"}
+                        color={"secondary"}
+                        variant={"outlined"}
                       >
-                        <Remove />
-                      </IconButton>
+                        <IconButton
+                          onClick={() => {
+                            ctx.dispatch({
+                              type: "REMOVE_ONE_ITEM",
+                              payload: {
+                                id: item.id,
+                                name: item.name,
+                                size: price.size,
+                                category_id: category_id,
+                                price: price.regular_mrp,
+                                merchandise_id: merchandise_id,
+                              },
+                            });
+                          }}
+                        >
+                          <Remove />
+                        </IconButton>
 
-                      <Button
-                        variant={"contained"}
-                        color={"primary"}
-                        disableElevation={true}
-                      >
-                        {" "}
-                        {itemIndex !== -1
-                          ? ctx.state.cart[itemIndex].quantity
-                          : "0"}{" "}
-                      </Button>
+                        <Button
+                          variant={"contained"}
+                          color={"primary"}
+                          disableElevation={true}
+                        >
+                          {" "}
+                          {itemIndex !== -1
+                            ? ctx.state.cart[itemIndex].quantity
+                            : "0"}{" "}
+                        </Button>
 
-                      <IconButton
-                        onClick={() => {
-                          ctx.dispatch({
-                            type: "ADD_ONE_ITEM",
-                            payload: {
-                              id: item.id,
-                              name: item.name,
-                              size: price.size,
-                              price: price.regular_mrp,
-                              category_id: category_id,
-                              merchandise_id: merchandise_id,
-                            },
-                          });
-                        }}
-                      >
-                        <Add />
-                      </IconButton>
-                    </ButtonGroup>
-                  </ListItemSecondaryAction>
-                </ListItem>
+                        <IconButton
+                          onClick={() => {
+                            ctx.dispatch({
+                              type: "ADD_ONE_ITEM",
+                              payload: {
+                                id: item.id,
+                                name: item.name,
+                                size: price.size,
+                                price: price.regular_mrp,
+                                category_id: category_id,
+                                merchandise_id: merchandise_id,
+                              },
+                            });
+                          }}
+                        >
+                          <Add />
+                        </IconButton>
+                      </ButtonGroup>
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                  <br />
+                </>
               );
             })}
           </List>
@@ -214,10 +220,8 @@ export default (props) => {
           >
             Add
           </Button>
-          
         </DialogActions>
       </Dialog>
-      
     </Card>
   );
 };

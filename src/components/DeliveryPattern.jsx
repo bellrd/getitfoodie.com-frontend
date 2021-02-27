@@ -59,6 +59,7 @@ export default props => {
           </Grid>
         </Grid>
         <Dialog
+          onBackdropClick={() => setShowDialog(false)}
           open={showDialog}
           disableBackdropClick={false}
           fullWidth={true}
@@ -76,13 +77,13 @@ export default props => {
           >Tomestry Delivery Charges Work as Below Pattern :-</text>
           <br/>
           <br/>
-          <text>Above on 100 Rs. of Order = 20 Rs. Delivery Charge.</text>
+          <text>Above on 100 Rs. of Order = 20 Rs. Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
-          <text>Between 100 To 50 Rs. = 25 Rs Delivery Charge.</text>
+          <text>Between 100 To 50 Rs. = 25 Rs Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
-          <text>Between 49 To 20 Rs. = 30 Rs. Delivery Charge</text>
+          <text>Between 49 To 20 Rs. = 30 Rs. Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
           <text>Minimum Order Amount is 19 Rs.</text>

@@ -73,6 +73,12 @@
           },
         }
       );
+
+      let rootElement = document.getElementById("root");
+      rootElement.addEventListener("login", function (e) {
+        console.log({e});
+        Android.sendFcmTokenToServer(e.detail)
+      });
     </script>
   </body>
 </html>

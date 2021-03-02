@@ -131,13 +131,20 @@ export default (props) => {
               return (
                 <>
                   <ListItem key={index}>
-                    <ListItemText>
+                    {/* <ListItemText>
                       {" "}
                       <small>
                         {price.size} <b> ₹{price.regular_mrp} </b> <br />
                         {price.additional_detail}
                       </small>
-                    </ListItemText>
+                    </ListItemText> */}
+
+
+                    <ListItemText primary={
+                      <p> {price.size}  ₹ {price.regular_mrp} </p>
+                    } secondary={
+                      <small> <br />{price.additional_detail} </small>
+                    } />
                     <ListItemSecondaryAction>
                       <ButtonGroup
                         size={"small"}

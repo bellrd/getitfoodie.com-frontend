@@ -77,7 +77,7 @@ export default props => {
           >Tomestry Delivery Charges Work as Below Pattern :-</text>
           <br/>
           <br/>
-          <text>Above on 100 Rs. of Order = 20 Rs. Delivery Charge including Government Tax.</text>
+          <text>Above on 100 Rs. of Order = 25 Rs. Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
           <text>Between 100 To 50 Rs. = 25 Rs Delivery Charge including Government Tax.</text>

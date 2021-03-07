@@ -23,7 +23,7 @@ import { GlobalContext } from "../GlobalContext";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(0),
     // display: "flex",
     // width: "auto",
     justifyContent: "space-between",
@@ -68,7 +68,8 @@ export default (props) => {
           <small>
             <strong>{item.name} </strong>
           </small>
-          <small> {item.tags.includes("VEG") ? "VEG" : "NON-VEG"} </small>
+          <small> {item.tags.includes("VEG") ? "VEG" : ""} </small>
+          <small> {item.tags.includes("NON VEG") ? "NON-VEG" : ""} </small>
           <br />
           <small>
             {item.prices[0].size} at {item.prices[0].regular_mrp}
@@ -140,8 +141,18 @@ export default (props) => {
                     </ListItemText> */}
 
 
-                    <ListItemText primary={
+                    {/* <ListItemText primary={
                       <p> {price.size}  ₹ {price.regular_mrp} </p>
+                    } secondary={
+                      <small> <br />{price.additional_detail} </small>
+                    } />
+                    <ListItemSecondaryAction> */}
+
+
+                    <ListItemText primary={
+                      <p style={{
+                        fontSize:"1.5vh"
+                      }}> {price.size}  ₹ <strong>{price.regular_mrp} </strong>  </p>
                     } secondary={
                       <small> <br />{price.additional_detail} </small>
                     } />

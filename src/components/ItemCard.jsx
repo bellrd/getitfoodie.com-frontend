@@ -79,7 +79,8 @@ export default (props) => {
           <small>
             <strong>{item.name} </strong>
           </small>
-          <small> {item.tags.includes("VEG") ? "VEG" : "NON-VEG"} </small>
+          <small> {item.tags.includes("VEG") ? "VEG" : ""} </small>
+          <small> {item.tags.includes("NON VEG") ? "NON-VEG" : ""} </small>
           <br />
           <small>
             {item.prices[0].size} at {item.prices[0].regular_mrp}
@@ -143,7 +144,9 @@ export default (props) => {
                 <>
                   <ListItem key={index}>
                     <ListItemText primary={
-                      <p> {price.size}  ₹ <strong>{price.regular_mrp} </strong>  </p>
+                      <p style={{
+                        fontSize:"1.5vh"
+                      }}> {price.size}  ₹ <strong>{price.regular_mrp} </strong>  </p>
                     } secondary={
                       <small> <br />{price.additional_detail} </small>
                     } />

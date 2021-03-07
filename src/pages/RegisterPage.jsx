@@ -250,7 +250,7 @@ export default function SignUp() {
 
                         }}
                         
-                        >In Case if You are new on website and you don't have any Referral Code then You can use 9H4Y1X2F for Wallet Discount.</text>
+                        >In Case if You are new on website and you don't have any Referral Code then You can Leave Referral Space Blank.</text>
               </Grid>
             </Grid>
             <Button

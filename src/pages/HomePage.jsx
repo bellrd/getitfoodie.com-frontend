@@ -11,6 +11,8 @@ import QuickLinks from "../components/QuickLinks";
 import PopularMerchandiseList from "../components/PopularMerchandiseList";
 import hero_background from "../assets/hero_background.jpg";
 import NoticePopup from "../components/NoticePopup";
+// import CancelOrder from "../components/CancelOrder";
+import CancelOrder from "../components/CancelOrder";
 
 
 
@@ -153,6 +155,7 @@ export default props => {
           <Slider />
         </Box>
       </Container>
+      
 
       <Container maxWidth={"lg"}>
         <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
@@ -172,6 +175,8 @@ export default props => {
           {" "}
           Services Available From 11:00 A.M To 9:30 P.M{" "}
         </Typography>
+        <CancelOrder/>
+        
         <Grid container spacing={4}>
           <MerchandiseCardList />
         </Grid>

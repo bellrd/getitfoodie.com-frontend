@@ -16,7 +16,8 @@ import { Redirect, useHistory } from "react-router-dom";
 import Loader from "../components/Loader";
 import { BASE_URL } from "../constant";
 import { GlobalContext } from "../GlobalContext";
-import DeliveryPattern from "../components/DeliveryPattern"
+import DeliveryPattern from "../components/DeliveryPattern";
+import CancelOrder from "../components/CancelOrder";
 const useStyles = makeStyles((theme) => ({
   spinner: {
     margin: 0,
@@ -386,8 +387,9 @@ export default (props) => {
         }}
         >You Saved {""+""} {order.discount} Rs. on This Deal.</h2> }</span>
 <DeliveryPattern/>
+<CancelOrder/>
       </Container>
-      // <text>dasdsadasdas dsad a dsa ds ad d sa dsa </text>
+
     );
   }
 };

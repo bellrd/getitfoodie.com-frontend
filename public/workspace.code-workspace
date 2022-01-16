@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "SSH FS - tomestry@tomestry.com",
+			"uri": "ssh://tomestry@tomestry.com/"
+		},
+		{
+			"name": "SSH FS - unnamed",
+			"uri": "ssh://unnamed/"
+		}
+	],
+	"settings": {}
+}

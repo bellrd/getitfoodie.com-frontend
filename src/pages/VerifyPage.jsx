@@ -19,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link to="/">Getitfoodie.com</Link> {new Date().getFullYear()}
+      <Link to="/">Tomestry.com</Link> {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -95,6 +95,7 @@ export default function VerifyPage(props) {
   };
 
   const handleSubmit = () => {
+    setDisableSubmit(true);
     if (false) {
       setMobileFieldError(true);
       return; //required
@@ -106,15 +107,19 @@ export default function VerifyPage(props) {
       return; // don't mess
     } else {
       setOtpFieldError(false);
+      setDisableSubmit(false);
     }
-
+   
     window.confirmationResult
       .confirm(verifyData.otp)
       .then((result) => {
-        console.log("otp is correct");
+        //console.log("otp is correct");
+        console.log("Welcome To Tomestry, Ask Us if Need Any Support.");
       })
       .catch((err) => {
-        alert("Otp verification failed");
+        setDisableSubmit(false);
+        //alert("Otp verification failed");
+        alert("Welcome To Tomestry, Ask Us if Need Any Support.");
         return;
       });
 
@@ -129,29 +134,19 @@ export default function VerifyPage(props) {
         })
           .then((response) => {
             ctx.dispatch({ type: "LOGIN", payload: response.data });
-            history.replace("/");
+            //history.replace("/");
+            window.location = "https://tomestry.com/";
           })
           .catch((error) => {
-            alert("Otp verification failed.");
+            //alert("Otp verification failed.");
+            alert("Welcome To Tomestry, Ask Us if Need Any Support.");
+            setDisableSubmit(false);
           });
       })
       .catch((e) => {
         console.log("error retrieving firbase token for the user ");
+        setDisableSubmit(false);
       });
-
-    // Axios.post(`${BASE_URL}/verify/`, {
-    //   mobile_number: verifyData.mobile,
-    //   otp: verifyData.otp,
-    // })
-    //   .then((response) => {
-    //     ctx.dispatch({ type: "LOGIN", payload: response.data });
-    //     history.replace("/");
-    //   })
-    //   .catch((error) => {
-    //     alert("Otp verification failed.");
-    //   });
-
-    setDisableSubmit(true);
   };
   return (
     <Container component="main" maxWidth="xs">

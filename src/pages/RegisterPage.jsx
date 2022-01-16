@@ -24,7 +24,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link to="/">Getitfoodie.com</Link> {new Date().getFullYear()}
+      <Link to="/">Tomestry.com</Link> {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(2),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -71,6 +71,7 @@ export default function SignUp() {
     last_name: "",
     mobile_number: "",
     password: "",
+    referrer_code: "",
     email: "", // *workaround* required to send valid post request (backend need to be changed)
   });
   const [firstNameFieldError, setFirstNameFieldError] = useState(false);
@@ -135,7 +136,7 @@ export default function SignUp() {
         console.log({ error });
         setDisableSubmit(false);
       });
-    setDisableSubmit(false);
+    // setDisableSubmit(false);
   };
 
   if (step === 1) {
@@ -195,6 +196,16 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  variant="outlined"
+                  fullWidth
+                  id="referrer_code"
+                  label="Referal code For Cash Back."
+                  name="referrer_code"
+                  onChange={handleInput}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
                   error={passwordFieldError}
                   helperText={
                     passwordFieldError ? "At least 8 character." : null
@@ -228,6 +239,18 @@ export default function SignUp() {
                   }
                   label="I want to receive offers, promotions and updates via SMS." //we don't handle this checkbox anyway
                 />
+                <text
+                        style={{
+
+                        }}
+                        
+                        >If You Are Referring Your Referral Connections To Your Friends or Loving One and as he/she complete their Signup on Tomestry and as their 1st order get delivered Successfully ,You both will get Rs.10 in Tomestry Wallet.</text>
+                        <text
+                        style={{
+
+                        }}
+                        
+                        >In Case if You are new on website and you don't have any Referral Code then You can Leave Referral Space Blank.</text>
               </Grid>
             </Grid>
             <Button

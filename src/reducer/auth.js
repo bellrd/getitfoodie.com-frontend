@@ -7,6 +7,10 @@
 */
 export const login = (state, data) => {
     localStorage.setItem("accessToken", data);
+    let event = new CustomEvent("login", {detail:data});
+    const rootElement = document.getElementById("root");
+    rootElement.dispatchEvent(event);
+
     return { ...state, accessToken: `Token ${data}` };
 };
 export const logout = (state, data) => {

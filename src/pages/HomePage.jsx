@@ -1,6 +1,16 @@
 import React from "react";
 import AppBar from "../components/AppBar";
-import { Box, Container, CssBaseline } from "@material-ui/core";
+import { Box, Container, CssBaseline,ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
+  Hidden,
+  List,
+  ListItem,
+  ListItemText,
+  DialogContent,
+  ListSubheader,
+  Paper,
+  IconButton,} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -8,9 +18,19 @@ import Slider from "../components/Slider";
 import Footer from "../components/Footer";
 import MerchandiseCardList from "../components/MerchandiseCardList";
 import QuickLinks from "../components/QuickLinks";
+import PickUp1 from "../components/PickUp1";
+import PickUp2 from "../components/PickUp2";
+import PickUp3 from "../components/PickUp3";
 import PopularMerchandiseList from "../components/PopularMerchandiseList";
 import hero_background from "../assets/hero_background.jpg";
 import NoticePopup from "../components/NoticePopup";
+// import CancelOrder from "../components/CancelOrder";
+import CancelOrder from "../components/CancelOrder";
+import BlinkText from "../components/BlinkText";
+import BlinkNotice from "../components/BlinkNotice";
+// import WelcomeText from "../components/WelcomeText";
+import {ExpandMore, KeyboardBackspaceRounded as Back} from "@material-ui/icons";
+
 
 
 
@@ -54,12 +74,28 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "underline",
     color: theme.palette.primary.main
   },
-  vendorTitle: {
-    marginTop: theme.spacing(3),
+  timeTitle: {
+    marginTop: theme.spacing(1),
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(2),
     fontWeight: "bolder",
     textDecoration: "underline",
+    color: theme.palette.primary.main
+    },
+  vendorTitle: {
+  marginTop: theme.spacing(1),
+  marginLeft: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  fontWeight: "bolder",
+  textDecoration: "underline",
+  color: theme.palette.primary.main
+  },
+  noticeTitle: {
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bolder",
+    // textDecoration: "underline",
     color: theme.palette.primary.main
   }
 }));
@@ -116,6 +152,8 @@ export default props => {
           Services Available By 11:00 A.M To 9:30 P.M
         </Typography> */}
 
+        
+
 
 
         {/* editing end */}
@@ -124,32 +162,94 @@ export default props => {
 
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {""}
-           Click Me Below On Slider{" "}
+           .{" "}
+           {/* Click Me Below On Slider{" "} */}
         </Typography>
         <Box mt={1}>
           <CssBaseline />
           <Slider />
         </Box>
       </Container>
+      
 
       <Container maxWidth={"lg"}>
-        <Typography variant={"h6"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
+        <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
           Welcome to Tomestry{" "}
         </Typography>
+        {/* <Typography variant={"h6"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
+          {" "}
+          Hello Guest{" "}
+        </Typography> */}
+        {/* <WelcomeText/> */}
+        <Typography body={"h6"} align={"center"} style={{color:"blue"}} className={classes.noticeTitle}>
+          {" "}
+          You are Most Welcome in Tomestry. {" "}
+          <BlinkText/>
+          <BlinkNotice/>
+        </Typography>
+        
+        
+        
+        
+        
+        {/*<Typography body={"h6"} align={"center"} style={{color:"red"}} className={classes.timeTitle}>
+          {" "}
+          Services Available From 11:00 A.M To 9:30 P.M{" "}
+        </Typography>*/}
+        <CancelOrder/>
+
+
+
+        <ExpansionPanel>
+        <ExpansionPanelSummary expandIcon={<ExpandMore/>} style={{backgroundColor:"rgb(189, 177, 235)"}}>
+        <Typography style={{color:"red"}} >Home Delivery</Typography>
+        </ExpansionPanelSummary>
+
+
+
+        {/* Merchant Card Code Start */}
+        
+        <ExpansionPanelDetails>
         <Grid container spacing={4}>
           <MerchandiseCardList />
         </Grid>
+        </ExpansionPanelDetails>
+
+                            
+        {/* merchant Card Code End */}
+        </ExpansionPanel>
+
       </Container>
-      {/* <Container maxWidth={"lg"}>
-        <Typography variant={"h6"} className={classes.vendorTitle}>
-          {" "}
-          All Available Vendors{" "}
-        </Typography>
+
+
+
+
+
+      <div></div>
+      
+      <Container maxWidth={"lg"}>
+      <ExpansionPanel>
+        <ExpansionPanelSummary expandIcon={<ExpandMore/>} style={{backgroundColor:"rgb(189, 000, 235)"}}>
+          <Typography>Self PickUp (20% Discount)</Typography>
+          </ExpansionPanelSummary>
+        <ExpansionPanelDetails>    
         <Grid container spacing={4}>
           <PopularMerchandiseList />
+          <PickUp1 />
+          <PickUp2 />
+          <PickUp3 />
         </Grid>
-      </Container> */}
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+      </Container>
+
+
+
+
+
+
+      
 
       <Container maxWidth={"xl"}>
         <CssBaseline />
@@ -241,3 +341,6 @@ export default props => {
       </div>
     )}
   </Popup> */
+  
+  
+  

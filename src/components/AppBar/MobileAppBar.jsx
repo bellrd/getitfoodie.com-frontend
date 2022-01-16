@@ -19,8 +19,8 @@ import SideList from "./sidelist";
 const useStyle = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    background: "#000",
-    color: "#fff",
+    background: "primary",
+    color: "primary",
   },
   menuButton: {
     marginRight: theme.spacing(2),

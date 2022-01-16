@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;800&display=swap" rel="stylesheet" />
+    <title>Tomestry:Download</title>
+    <style>
+        .mainDiv {
+            width: 100vw;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        h1 {
+            /* color:#f05e23; */
+            color: white;
+            text-decoration: underline;
+        }
+
+        h5 {
+            color: white;
+            text-decoration: underline;
+        }
+
+        span {
+            color: "#ccc",
+        }
+
+        button {
+            padding: 17px;
+            font-family: "Roboto Slab", serif;
+            border: 1px solid white;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: #f05e23;
+            color: white;
+        }
+
+        body {
+            background-position: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("https://tomestry.com/media/bg.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="mainDiv">
+            <div>
+                <h1> Tomestry</h1>
+                <h5> Order food,grocery, vegetable online</h5>
+            </div>
+            <div>
+                <button id="btn"> Download tomestry app to continue</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        var elem = document.getElementById("btn");
+        elem.addEventListener("click", function () {
+            elem.innerText = "Downloading ..."
+            window.location = "https://tomestry.com/media/tomestry-app.apk";
+        });
+    </script>
+</body>
+
+</html>

@@ -2,15 +2,14 @@ import React from "react";
 import ReactDom from "react-dom";
 import fb from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAJlmV9esBKOokrVd9gRETvxIv6cmynlK0",
-  authDomain: "getit-website.firebaseapp.com",
-  databaseURL: "https://getit-website.firebaseio.com",
-  projectId: "getit-website",
-  storageBucket: "getit-website.appspot.com",
-  messagingSenderId: "151361898319",
-  appId: "1:151361898319:web:b9a2f3c1975bc95898673a",
-  measurementId: "G-GK6QXSEL58",
+var firebaseConfig = {
+  apiKey: "AIzaSyDEGu4RYx2TvCK6AvyhR1Z83aLFh1QY4js",
+  authDomain: "tomestry-b6f40.firebaseapp.com",
+  projectId: "tomestry-b6f40",
+  storageBucket: "tomestry-b6f40.appspot.com",
+  messagingSenderId: "360056016218",
+  appId: "1:360056016218:web:b6529ee0cec7d9713cb763",
+  measurementId: "G-9NHLY95J1M",
 };
 
 const firebase = !fb.apps.length ? fb.initializeApp(firebaseConfig) : fb.app();

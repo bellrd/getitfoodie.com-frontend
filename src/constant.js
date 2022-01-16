@@ -1,2 +1,2 @@
-export const BASE_URL = "https://getitfoodie.com/api"
-export const BASE_URL_IMAGE = "https://getitfoodie.com"
+export const BASE_URL = "https://tomestry.com/api";
+export const BASE_URL_IMAGE = "https://tomestry.com";

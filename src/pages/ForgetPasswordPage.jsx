@@ -18,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link to="/">Getitfoodie.com</Link> {new Date().getFullYear()}
+      <Link to="/">Tomestry.com</Link> {new Date().getFullYear()}
       {"."}
     </Typography>
   );
@@ -146,7 +146,7 @@ export default function ForgetPasswordPage(props) {
           <Grid container>
             <Grid item xs>
               <Link to="/help" variant="body2">
-                Need Help.? Call Us on 6306683868
+                Need Help.? Call Us on 8604850890
               </Link>
             </Grid>
             <Grid item>

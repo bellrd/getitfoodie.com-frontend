@@ -16,7 +16,8 @@ import { Redirect, useHistory } from "react-router-dom";
 import Loader from "../components/Loader";
 import { BASE_URL } from "../constant";
 import { GlobalContext } from "../GlobalContext";
-
+import DeliveryPattern from "../components/DeliveryPattern";
+import CancelOrder from "../components/CancelOrder";
 const useStyles = makeStyles((theme) => ({
   spinner: {
     margin: 0,
@@ -37,14 +38,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
   },
   payment: {
-    marginBottom: theme.spacing(2),
-    padding: theme.spacing(3),
+    marginBottom: theme.spacing(1.5),
+    padding: theme.spacing(1),
     marginTop: theme.spacing(2),
   },
   fab: {
     position: "fixed",
-    bottom: theme.spacing(4),
-    right: theme.spacing(4),
+    bottom: theme.spacing(2),
+    left: theme.spacing(4),
   },
   orderitems: {
     marginTop: theme.spacing(4),
@@ -63,12 +64,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    fontFamily: "Nunito",
+    // fontFamily: "Nunito",
     textTransform: "capitalize",
-    fontSize: "14px",
+    fontSize: "12px",
     color: "#333",
-    marginBottom: theme.spacing(2),
-    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(0),
   },
 }));
 
@@ -198,73 +199,184 @@ export default (props) => {
               setPayment_method(e.target.value);
             }}
           >
-            {order.total >= 600000
+            {order.total >= 66666           ///here was 6666 to disable online payment option appearence
               ? ["ONLINE"].map((option, index) => (
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
                 ))
               : ["COD"].map((option, index) => (
-              // : ["COD","ONLINE"].map((option, index) => (
+              //  : ["COD","ONLINE"].map((option, index) => (                   ///this handles payment option for cod or online
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
                 ))}
           </Select>
         </Paper>
+        <text
+        style={{
+          textAlign:"center"
+
+        }}
+        >You can also pay via any UPI app to our delivery executive.</text>
+        <h2
+        style={{
+          textAlign:"center",
+          textDecoration:"underline"
+        }}
+        >Billing Page</h2>
 
         <Paper className={classes.first} elevation={3}>
           <div className={classes.second}>
-            <span> Item total </span>
-            <span> {order.vendor_total}</span>
+            <span> Item Total </span>
+            <span style={{color:"green"}}>Rs. {order.real_vendor_total} <del style={{color:"red", fontSize:"15px"}}>{order.vendor_total}</del></span>
           </div>
 
           <Divider variant="fullWidth" />
 
           <div className={classes.second}>
             <span> Delivery Charge </span>
-            <span> {order.delivery_charge === 0 ? "Delivery Free" : order.delivery_charge }</span>
+            <span style={{color:"green"}}> {order.delivery_charge === 0 ? "Free Delivery" : order.delivery_charge }  <del style={{color:"red"}}> 32</del></span>
                 {/* if (order.delivery_charge === 0)
                 .then ("Free Delivery")  */}
           </div>
           <Divider variant="fullWidth" />
+
+
+
+          <Divider variant="fullWidth" />
+
+          <div className={classes.second}>
+            <span> Packaging </span>
+            <span> <b style={{color:"green"}} >FREE </b> <del style={{color:"red"}}>15</del>  </span>
+                {/* if (order.delivery_charge === 0)
+                .then ("Free Delivery")  */}
+          </div>
+          <Divider variant="fullWidth" />
+
+
+
+
           <div className={classes.second}>
             <span>Gst (tax)</span>
             {/* <span> {order.tax}</span> */}
-            <span> {order.tax === 0 ? "Tax Free" : order.tax }</span>
+            <span style={{color:"green"}}> {order.tax === 0 ? "Tax Free" : order.tax }  <del style={{color:"red"}}>  26</del></span>
           </div>
 
           <Divider variant="fullWidth" />
-          <div className={classes.second}>
-            <span> Coupon Discount </span>
-            {/* <span> -{order.discount}</span> */}
+          <div style={{
+            color:"green",
+            fontWeight:"bold",
+            fontSize:"13px"
+
+          }} 
+          className={classes.second}>
+            <span
+            style={{
+              color:"green",
+              fontWeight:"bold",
+              fontSize:"13px"
+            }} 
+            
+            > Special Discount </span>
             <span> -{order.discount}</span>
           </div>
           <Divider variant="fullWidth" />
-          <div className={classes.second}>
-            <span> Wallet discount </span>
+          <div 
+          style={{
+            color:"green",
+            fontWeight:"bold",
+            fontSize:"13px"
+
+          }} 
+          className={classes.second}>
+            <span> Wallet Discount </span>
             <span> -{order.from_wallet}</span>
           </div>
+
+
+
+
+
+
+
+
+
           <Divider variant="fullWidth" />
           <div className={classes.second}>
             <span
               style={{
-                fontSize: "3vh",
+                fontSize: "15px",
                 fontWeight: "bold",
                 color: "blue",
               }}
             >
-              TOTAL
+              TOTAL TO PAY
             </span>
-            <span
+            {/* <span
               style={{
-                fontSize: "5vh",
+                fontSize: "3vh",
                 fontWeight: "bold",
-                color: "blue",
+                color: "blue"
               }}
             >
               ₹ {order.total}
-            </span>
+              <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>  
+            </span> */}
+
+              {/* <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>  
+            </span> */}
+
+              <span> {order.tax === 0 ? <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              {/* <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.total + order.discount}</del>   */}
+            </span> : <span
+              style={{
+                fontSize: "3vh",
+                fontWeight: "bold",
+                color: "blue"
+              }}
+            >
+              ₹ {order.total}
+              <del
+              style={{
+                color: "red",
+                fontSize:"3vh"
+              }}
+              > {order.vendor_total + 32 +15 +26}</del>  
+            </span> }</span>
+              
+              
+
           </div>
         </Paper>
 
@@ -278,7 +390,32 @@ export default (props) => {
         >
           {disableSubmit ? "Wait" : "Place Order"}
         </Fab>
+        {/* <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >You Saved {""+""} {order.discount} Rs. on This Deal.</h2> */}
+        {/* order.from_wallet */}
+        <span> {order.tax === 0 ? <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >This Vendor is Already at Discount Price.</h2> : <h2
+        style={{
+          textAlign:"center",
+          color:"green",
+          fontWeight:"bold"
+        }}
+        >You Saved {""+""} {order.vendor_total + 32 +15 +26 - order.total } Rs. on This Deal.</h2> }</span>
+        <span> <h3 style={{textAlign:"center", color:"green", fontWeight:"bold"}} >Try to Order Above 149 Rs. to Save Your Money.</h3></span>
+<DeliveryPattern/>
+<CancelOrder/>
       </Container>
+
     );
   }
 };

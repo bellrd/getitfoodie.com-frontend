@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     Container,
     CssBaseline,
@@ -12,16 +12,16 @@ import {
     Switch,
     Typography,
 } from "@material-ui/core";
-import {KeyboardBackspaceRounded as Back} from "@material-ui/icons"
-import {useHistory, Redirect} from "react-router-dom"
+import { KeyboardBackspaceRounded as Back } from "@material-ui/icons"
+import { useHistory, Redirect } from "react-router-dom"
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Button from "@material-ui/core/Button";
 import Axios from "axios";
-import {BASE_URL} from "../constant";
-import {GlobalContext} from "../GlobalContext";
+import { BASE_URL } from "../constant";
+import { GlobalContext } from "../GlobalContext";
 
 
 const useStyles = makeStyles(theme => ({
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(3),
     },
     info: {
-        padding: theme.spacing(4)
+        padding: theme.spacing(2)
     },
     update: {
         marginTop: theme.spacing(4),
@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     },
     form: {},
     submit: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(0),
         borderRadius: 0
     }
 }));
@@ -61,7 +61,7 @@ export default (props) => {
     const classes = useStyles();
 
     useEffect(() => {
-        Axios.get(`${BASE_URL}/profile/`, {headers: {Authorization: ctx.state.accessToken}}).then(
+        Axios.get(`${BASE_URL}/profile/`, { headers: { Authorization: ctx.state.accessToken } }).then(
             response => {
                 setProfile(response.data);
             }
@@ -77,7 +77,7 @@ export default (props) => {
         } else if (e.target.name === "password2") {
             setPassword2(e.target.value)
         } else {
-            console.log("wtf level 101");
+            console.log("level 101");
         }
     };
 
@@ -94,8 +94,8 @@ export default (props) => {
         Axios.post(`${BASE_URL}/user/set_password/`, {
             mobile: profile.mobile,
             password1: password2,
-	    password2: password2
-        }, {headers: {Authorization: ctx.state.accessToken}}).then(
+            password2: password2
+        }, { headers: { Authorization: ctx.state.accessToken } }).then(
             response => {
                 alert("Password updated")
             })
@@ -105,23 +105,23 @@ export default (props) => {
     };
 
     if (!ctx.state.accessToken || ctx.state.accessToken == "Token null" || ctx.state.accessToken == "Token undefined") {
-        return <Redirect to={{pathname: "/login", next: "/profile"}}/>
+        return <Redirect to={{ pathname: "/login", next: "/profile" }} />
     } else
 
         return (
             <div>
                 <Container maxWidth={"sm"}>
-                    <CssBaseline/>
+                    <CssBaseline />
 
                     <div className={classes.main}>
                         <div className={classes.title}>
-                            <Back fontSize={"large"} onClick={history.goBack}/>
+                            <Back fontSize={"large"} onClick={history.goBack} />
 
                         </div>
 
-                        <Paper className={classes.info} elevation={3}>
+                        <Paper className={classes.info}  elevation={3}>
                             <List subheader={<ListSubheader disableSticky> {profile.full_name}</ListSubheader>}>
-                                <ListItem>
+                                {/* <ListItem>
                                     <ListItemText> Email: </ListItemText>
                                     <ListItemSecondaryAction onClick={() => {
                                         const newEmail = prompt("Enter Email");
@@ -129,11 +129,11 @@ export default (props) => {
                                     }}>
                                         {profile.email || "Not available."}
                                     </ListItemSecondaryAction>
-                                </ListItem>
+                                </ListItem> */}
                                 <ListItem>
                                     <ListItemText> Wallet </ListItemText>
                                     <ListItemSecondaryAction>
-                                        <Typography variant={"subtitle2"}> {profile.wallet }</Typography>
+                                        <Typography variant={"subtitle2"}> {profile.wallet}</Typography>
                                     </ListItemSecondaryAction>
                                 </ListItem>
                                 <ListItem>
@@ -142,9 +142,64 @@ export default (props) => {
                                         <Typography variant={"subtitle2"}> {profile.first_name + " " + profile.last_name}</Typography>
                                     </ListItemSecondaryAction>
                                 </ListItem>
-                            </List>
-                        </Paper>
 
+                                <ListItem>
+                                    <ListItemText> My referral code </ListItemText>
+                                    <ListItemSecondaryAction>
+                                        <Typography variant={"subtitle2"}> {profile.referral_code}</Typography>
+
+                                    </ListItemSecondaryAction>
+                                </ListItem>
+
+                                <ListItem>
+                                    <ListItemText
+                                    > My Successful Referral Connections </ListItemText>
+                                    <ListItemSecondaryAction>
+                                        <Typography variant={"subtitle2"}> {profile.refer_count}</Typography>
+                                    </ListItemSecondaryAction>
+                                </ListItem>
+                            </List>
+  
+                            <Button variant="contained" color="primary" onClick={() => {
+                                console.log(navigator.share)
+                                if (navigator.share) {
+                                    navigator.share({
+                                        title: 'Referral Code',
+                                        text: 'Hi, I am Tomestry Food Delivery Company User, '  + profile.first_name + " " + profile.last_name + '. Please Register your Tomestry Account using my Referral Code. If you use my code, we both will get Tomestry Cash back of *10 Rs.* after your 1st Successful Order.  *My Referral Code is* ' +profile.referral_code ,
+                                        // text: 'I am Tomestry Food Delivery User. ' + profile.first_name  + " " + profile.last_name,
+                                        // text: 'Please Register your Tomestry Account using my Referral Code. If you use my code, we both will get Tomestry Cash back of 10 Rs. after your 1st Successful Order. ' + profile.referral_code,
+                                        // text: 'Tomesty use to deliver all its goods and services on Shop/Restaurent Price. Tomestry never takes any increased price on item than the price is at Restaurent. ',
+                                        // text: 'Tomestry use to deliver :- ',
+                                        // text: 'Family Food. ',
+                                        // text: 'Chinese Foods ',
+                                        // text: 'Rolls ',
+                                        // text: 'Shake & Juices ',
+                                        // text: 'Green Vegetables ',
+                                        // text: 'Tiffin Services ',
+                                        // text: 'Veg & Non-Veg all type of Foods. ',
+                                        // text: 'Web & Android Apps Developments ',
+                                        url: 'https://tomestry.com',
+                                    })
+                                        .then(() => console.log('Successful share'))
+                                        .catch((error) => console.log('Error sharing', error));
+                                }
+                                else {
+                                    alert(`${profile.referral_code} share this code`)
+                                }
+                            }
+                            }>
+                                Share Referral
+                            </Button>
+                            
+                           
+                        </Paper>
+                        <text
+                        style={{
+
+                        }}
+                        
+                        >If You Are Referring Your Referral Connections To Your Friends or Loving One and as he/she complete their Signup on Tomestry and as their 1st order get delivered Successfully ,You both will get Rs.10 in Tomestry Wallet.</text>
+                        <text>As much Your Connections get increased,accordingly you will get Rs.10 on each Successful Connection.</text>
                         <section id="updatePassword">
                             <Paper elevation={3} className={classes.update}>
                                 <form noValidate className={classes.form}>
@@ -166,7 +221,7 @@ export default (props) => {
                                                         toggleShowPassword(!showPassword)
                                                     }}
                                                 >
-                                                    {showPassword ? <Visibility/> : <VisibilityOff/>}
+                                                    {showPassword ? <Visibility /> : <VisibilityOff />}
                                                 </IconButton>
                                             )
                                         }}
@@ -182,12 +237,12 @@ export default (props) => {
                                         onChange={handleInput}
                                     />
                                     <Button
-                                            fullWidth
-                                            variant="contained"
-                                            color="secondary"
-                                            disabled={password2 !== password1}
-                                            className={classes.submit}
-                                            onClick={handleSubmit}
+                                        fullWidth
+                                        variant="contained"
+                                        color="secondary"
+                                        disabled={password2 !== password1}
+                                        className={classes.submit}
+                                        onClick={handleSubmit}
                                     >
                                         Update Password
                                     </Button>

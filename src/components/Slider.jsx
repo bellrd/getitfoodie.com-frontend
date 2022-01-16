@@ -14,6 +14,9 @@ import imageUrl3 from "../assets/leg.jpg";
 // target_url: "https://getitfoodie.com/menu/17";
 import imageUrl2 from "../assets/paneer.jpg";
 import imageUrl4 from "../assets/vegetables.jpg";
+import imageUrl6 from "../assets/refer2.jpg";
+// import imageUrl7 from "../assets/offer.jpg";
+// import imageUrl8 from "../assets/offer.jpg";
 
 
 
@@ -23,7 +26,15 @@ const demoOffer = [
     // description: "Best Chinese Food",
     // action: "some url",
     imageUrl: imageUrl1,
-    target_url: "/menu/4",
+    //target_url: "/menu/4",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
   },
   {
     // title: "Pure & Fresh Foods",
@@ -31,28 +42,60 @@ const demoOffer = [
     // action: "click me",O
     imageUrl: imageUrl2,
     //imageUrl: "https://source.unsplash.com/random",
-    target_url: "/menu/2",
+    //target_url: "/menu/2",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
   },
   {
     // title: "Non-Vegetarian",
     // description: "Fresh Non-Veg",
     // action: "press me",
     imageUrl: imageUrl3,
-    target_url: "/menu/1",
+    //target_url: "/menu/1",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
   },
   {
     // title: "Fresh Vegetables",
     // description: "Care Of Health",
     // action: "Enjoy",
     imageUrl: imageUrl4,
-    target_url: "/menu/17",
+    //target_url: "/menu/17",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "profile",
   },
   {
     // title: "Grocery",
     // description: "Your Daily Essential",
     // action: "https://getitfoodie.com/menu/22",
     imageUrl: imageUrl5,
-    target_url: "/menu/22",
+    //target_url: "/menu/22",
+  },
+  {
+    // title: "Pure & Fresh Foods",
+    // description: "Family Food",
+    // action: "click me",O
+    imageUrl: imageUrl6,
+    //imageUrl: "https://source.unsplash.com/random",
+    target_url: "/profile",
   },
 ];
 const responsive = {
@@ -80,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     textAlign: "center",
     alignItem: "center",
-    height: 260,
+    height: 150,
     padding: theme.spacing(4),
     marginRight: theme.spacing(1),
     marginLeft: theme.spacing(1),

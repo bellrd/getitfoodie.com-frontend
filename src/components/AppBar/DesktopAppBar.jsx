@@ -52,10 +52,10 @@ export default function MenuAppBar(props) {
 
     return (
         <div className={classes.root}>
-            <AppBar position={"fixed"} color={"secondary"} elevation={3}>
+            <AppBar position={"fixed"} color={"primary"} elevation={3}>
                 <Toolbar>
                     <Typography variant="h5" className={classes.title}>
-                        GetIt
+                        Tomestry
                     </Typography>
                     {ctx.state.accessToken != null && ctx.state.accessToken != "Token null" &&  ctx.state.accessToken != "Token undefined" ? (
                         <div>

@@ -63,6 +63,11 @@ export default (props) => {
             return
         }
 
+        if (address.detail.length === 0) {
+            alert("Active Mobile No. Required")
+            return
+        }
+
         if (props.location.address == null) {
             Axios.post(`${BASE_URL}/address/`, address, {headers: {Authorization: ctx.state.accessToken}}).then(response => {
                     history.replace("/chooseAddress")
@@ -115,11 +120,12 @@ export default (props) => {
                                 variant={props.location.address ? "filled" : "standard"}
                                 fullWidth
                                 name="landmark"
-                                label="Landmark"
+                                label="Landmark And 1 Active Mobile No. "
                                 defaultValue={edit ? props.location.address.landmark : ""}
                                 id="landmark"
                                 onChange={handleInput}
                             />
+                            
                             <TextField
                                 multiline
                                 rows={2}
@@ -128,7 +134,7 @@ export default (props) => {
                                 variant={props.location.address ? "filled" : "standard"}
                                 fullWidth
                                 name="detail"
-                                label="detail"
+                                label="Full Detail"
                                 defaultValue={edit ? props.location.address.detail : ""}
                                 id="detail"
                                 onChange={handleInput}

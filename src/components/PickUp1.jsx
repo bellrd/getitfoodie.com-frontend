@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -88,13 +87,14 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 200,
   },
 }));
+
 export default (props) => {
   const history = useHistory();
   const [merchandises, setMerchandises] = useState([]);
   useEffect(() => {
-    Axios.get(`${BASE_URL}/merchandise/35/`)
+    Axios.get(`${BASE_URL}/merchandise/`)
       .then((response) => {
-        setMerchandises(response.data.filter((m) => m.is_open == true === 35));
+        setMerchandises(response.data.filter((m) => m.is_open == true && m.id === 35 ));
       })
       .catch((error) => {
         console.log("Merchandise  loading failed.");
@@ -107,7 +107,7 @@ export default (props) => {
   else
     return (
       <React.Fragment>
-        {merchandises.map/35/((merchandise) => (
+        {merchandises.map((merchandise) => (
           <Grid item key={merchandise.id} xs={12} sm={6} md={4}>
             <Card
               className={classes.card}
@@ -140,7 +140,7 @@ export default (props) => {
                 <div>
                   <Rating
                     read_only
-                    value={merchandise.rating || 1}
+                    value={merchandise.rating || 5}
                     precision={0.5}
                     size={"small"}
                   />
@@ -156,7 +156,7 @@ export default (props) => {
               }}
                 
                 className={classes.additional_detail}>
-                <small>{merchandise.additional_detail.slice(0, 50)} </small>
+                <small>{merchandise.additional_detail.slice(0, 100)} </small>
               </div>
             </Card>
           </Grid>

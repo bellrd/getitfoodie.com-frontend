@@ -23,26 +23,21 @@ import { GlobalContext } from "../GlobalContext";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    marginBottom: theme.spacing(1),
-    display: "flex",
-    width: "auto",
+    marginBottom: theme.spacing(0),
+    // display: "flex",
+    // width: "auto",
     justifyContent: "space-between",
     minHeight: 90,
     maxHeight: 180,
   },
   details: {
     display: "flex",
-    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    textAlign: "right",
-  },
-  content: {},
-  cover: {
-    margin: theme.spacing(1),
-    width: 150,
+    textAlign: "left",
   },
   controls: {
+    marginTop: theme.spacing(2),
     alignItems: "center",
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(2),
@@ -68,12 +63,6 @@ export default (props) => {
 
   return (
     <Card className={classes.card} elevation={5} variant={"elevation"}>
-      <CardMedia
-        className={classes.cover}
-        // image={item.item_photo || `${BASE_URL_IMAGE}/media/default_image.jpeg`}
-        image={item.item_photo}
-        title="Item photo"
-      />
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <small>
@@ -83,7 +72,7 @@ export default (props) => {
           <small> {item.tags.includes("NON VEG") ? "NON-VEG" : ""} </small>
           <br />
           <small>
-           {item.prices[0].size} at {<span><span
+            {item.prices[0].size} at {<span><span
            style={{
              color: "green"
            }}
@@ -138,7 +127,7 @@ export default (props) => {
         fullWidth={true}
         maxWidth={"sm"}
       >
-        <DialogTitle> Mark Size </DialogTitle>
+        <DialogTitle> Define Size </DialogTitle>
         <div>
           <DialogTitle>
             <h6 className={classes.offer}>Coupon is At Next Page.</h6>
@@ -152,69 +141,87 @@ export default (props) => {
                   cartitem.id === item.id && cartitem.size === price.size
               );
               return (
-                <ListItem key={index}>
-                  <ListItemText>
-                    {" "}
-                    <small>
-                      <b> {price.size}</b> <b>   <br></br>  <small style={{color:"green"}}>Rs. {price.getit_mrp} </small> </b> <del style={{color:"red"}}> {price.regular_mrp}</del>{" "}
-                    </small> 
-                    
-                  </ListItemText>
-                  <ListItemSecondaryAction>
-                    <ButtonGroup
-                      size={"small"}
-                      color={"secondary"}
-                      variant={"outlined"}
-                    >
-                      <IconButton
-                        onClick={() => {
-                          ctx.dispatch({
-                            type: "REMOVE_ONE_ITEM",
-                            payload: {
-                              id: item.id,
-                              name: item.name,
-                              size: price.size,
-                              category_id: category_id,
-                              price: price.getit_mrp,
-                              merchandise_id: merchandise_id
-                            }
-                          });
-                        }}
-                      >
-                        <Remove />
-                      </IconButton>
+                <>
+                  <ListItem key={index}>
+                    {/* <ListItemText>
+                      {" "}
+                      <small>
+                        {price.size} <b> ₹{price.regular_mrp} </b> <br />
+                        {price.additional_detail}
+                      </small>
+                    </ListItemText> */}
 
-                      <Button
-                        variant={"contained"}
-                        color={"primary"}
-                        disableElevation={true}
-                      >
-                        {" "}
-                        {itemIndex !== -1
-                          ? ctx.state.cart[itemIndex].quantity
-                          : "0"}{" "}
-                      </Button>
 
-                      <IconButton
-                        onClick={() => {
-                          ctx.dispatch({
-                            type: "ADD_ONE_ITEM",
-                            payload: {
-                              id: item.id,
-                              name: item.name,
-                              size: price.size,
-                              price: price.getit_mrp,
-                              category_id: category_id,
-                              merchandise_id: merchandise_id
-                            }
-                          });
-                        }}
+                    {/* <ListItemText primary={
+                      <p> {price.size}  ₹ {price.regular_mrp} </p>
+                    } secondary={
+                      <small> <br />{price.additional_detail} </small>
+                    } />
+                    <ListItemSecondaryAction> */}
+
+
+                    <ListItemText primary={
+                      <small> <b >{price.size}</b> <b>   <br></br>  <small style={{color:"green"}}>Rs. {price.getit_mrp} </small> </b> <del style={{color:"red"}}> {price.regular_mrp}</del>{" "}</small>
+                    } secondary={
+                      <small> <br />{price.additional_detail} </small>
+                    } />
+                    <ListItemSecondaryAction>
+                      <ButtonGroup
+                        size={"small"}
+                        color={"secondary"}
+                        variant={"outlined"}
                       >
-                        <Add />
-                      </IconButton>
-                    </ButtonGroup>
-                  </ListItemSecondaryAction>
-                </ListItem>
+                        <IconButton
+                          onClick={() => {
+                            ctx.dispatch({
+                              type: "REMOVE_ONE_ITEM",
+                              payload: {
+                                id: item.id,
+                                name: item.name,
+                                size: price.size,
+                                category_id: category_id,
+                                price: price.regular_mrp,
+                                merchandise_id: merchandise_id,
+                              },
+                            });
+                          }}
+                        >
+                          <Remove />
+                        </IconButton>
+
+                        <Button
+                          variant={"contained"}
+                          color={"primary"}
+                          disableElevation={true}
+                        >
+                          {" "}
+                          {itemIndex !== -1
+                            ? ctx.state.cart[itemIndex].quantity
+                            : "0"}{" "}
+                        </Button>
+
+                        <IconButton
+                          onClick={() => {
+                            ctx.dispatch({
+                              type: "ADD_ONE_ITEM",
+                              payload: {
+                                id: item.id,
+                                name: item.name,
+                                size: price.size,
+                                price: price.regular_mrp,
+                                category_id: category_id,
+                                merchandise_id: merchandise_id,
+                              },
+                            });
+                          }}
+                        >
+                          <Add />
+                        </IconButton>
+                      </ButtonGroup>
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                  <br />
+                </>
               );
             })}
           </List>

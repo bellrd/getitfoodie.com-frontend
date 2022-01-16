@@ -236,9 +236,9 @@ export default props => {
         <ExpansionPanelDetails>    
         <Grid container spacing={4}>
           <PopularMerchandiseList />
-          <PickUp1 />
+          {/* <PickUp1 />
           <PickUp2 />
-          <PickUp3 />
+          <PickUp3 /> */}
         </Grid>
         </ExpansionPanelDetails>
       </ExpansionPanel>

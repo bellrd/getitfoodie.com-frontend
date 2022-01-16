@@ -72,7 +72,18 @@ export default (props) => {
           <small> {item.tags.includes("NON VEG") ? "NON-VEG" : ""} </small>
           <br />
           <small>
-            {item.prices[0].size} at {item.prices[0].regular_mrp}
+            {item.prices[0].size} at {<span><span
+           style={{
+             color: "green"
+           }}
+           >
+              Rs {item.prices[0].getit_mrp} {" "}</span>
+              <del
+              style={{
+                color: "red",
+                fontSize:"2vh"}}
+              >{item.prices[0].regular_mrp}</del>
+              </span>}
           </small>
         </CardContent>
         <div className={classes.controls}>
@@ -150,9 +161,7 @@ export default (props) => {
 
 
                     <ListItemText primary={
-                      <p style={{
-                        fontSize:"1.5vh"
-                      }}> {price.size}  ₹ <strong>{price.regular_mrp} </strong>  </p>
+                      <small> <b >{price.size}</b> <b>   <br></br>  <small style={{color:"green"}}>Rs. {price.getit_mrp} </small> </b> <del style={{color:"red"}}> {price.regular_mrp}</del>{" "}</small>
                     } secondary={
                       <small> <br />{price.additional_detail} </small>
                     } />

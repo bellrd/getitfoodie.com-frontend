@@ -5,6 +5,9 @@ import {
   CssBaseline,
   Dialog,
   Fab,
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
   Grid,
   Hidden,
   List,
@@ -25,11 +28,14 @@ import { Link, useHistory } from "react-router-dom";
 import { BASE_URL } from "../constant";
 import Axios from "axios";
 import ItemCardList from "../components/ItemCardList";
+import {ExpandMore, KeyboardBackspaceRounded as Back} from "@material-ui/icons";
 import Loader from "../components/Loader";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import CloseIcon from "@material-ui/icons/Close";
 import { Rating } from "../components/MerchandiseCardList";
 import SearchIcon from "@material-ui/icons/Search";
+import { ExpandLessOutlined } from "@material-ui/icons";
+import { red } from "@material-ui/core/colors";
 
 const styles = (theme) => ({
   root: {
@@ -219,16 +225,41 @@ export default (props) => {
                   className={classes.category}
                 >
                   <Grid item xs={12}>
+
+
+
+                <ExpansionPanel>
+
+                  <ExpansionPanelSummary expandIcon={<ExpandMore/>} style={{backgroundColor:"rgb(189, 177, 235)"}}>
+                    <box>
                     <Typography variant={"subtitle1"} className={classes.title}>
                       {category.name}
                     </Typography>
+                    </box>
+                    </ExpansionPanelSummary>
+
+
+
+
+
+                    
+                    <ExpansionPanelDetails>
                     <Grid container spacing={2} className={classes.itemgrid}>
                       <ItemCardList
                         category_id={category.id}
                         merchandise_id={merchandise_id}
                       />
                     </Grid>
+                    </ExpansionPanelDetails>
+                  </ExpansionPanel>  
+
+
+
+
+
+
                   </Grid>
+                
                 </section>
               ))}
             </Grid>
@@ -272,7 +303,7 @@ export default (props) => {
           <Hidden mdUp>
             <Fab
               // variant={"extended"}
-              color={"secondary"}
+              color={"primary"}
               className={classes.filterFab}
               onClick={() => {
                 setShowFilterDialog(true);
@@ -284,7 +315,7 @@ export default (props) => {
 
           <Fab
             variant={"extended"}
-            color={"secondary"}
+            color={"primary"}
             className={classes.cartFab}
             onClick={() => {
               history.push("/cart");

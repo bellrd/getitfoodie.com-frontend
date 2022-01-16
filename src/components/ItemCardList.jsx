@@ -49,3 +49,8 @@ export default (props) => {
       </React.Fragment>
     );
 };
+
+//              <span>
+//              Rs {item.prices[0].getit_mrp}
+//              <del>{item.prices[0].regular_mrp}</del>
+//              </span>

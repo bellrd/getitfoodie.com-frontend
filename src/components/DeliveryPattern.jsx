@@ -80,13 +80,10 @@ export default props => {
           <text>Above on 100 Rs. of Order = 25 Rs. Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
-          <text>Between 100 To 50 Rs. = 25 Rs Delivery Charge including Government Tax.</text>
+          <text>Between 100 To 75 Rs. = 30 Rs Delivery Charge including Government Tax.</text>
           <br/>
           <br/>
-          <text>Between 49 To 20 Rs. = 30 Rs. Delivery Charge including Government Tax.</text>
-          <br/>
-          <br/>
-          <text>Minimum Order Amount is 19 Rs.</text>
+          <text>Minimum Order Amount is 75 Rs.</text>
           
           </DialogContent>
           <DialogActions>

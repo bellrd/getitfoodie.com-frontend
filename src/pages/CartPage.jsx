@@ -105,7 +105,10 @@ const CartItem = (props) => {
             >{cart_item.name}</small>
           </Typography>
           <Typography variant="subtitle2" color="textSecondary">
+            <small style={{color:"green"}}>{cart_item.size} x {cart_item.quantity}</small>
+           { /*
             <small>{cart_item.size} x {cart_item.quantity} = {cart_item.price * cart_item.quantity}</small>
+           */}
           </Typography>
         </CardContent>
         <div className={classes.controls}>
@@ -152,7 +155,9 @@ const CartItem = (props) => {
         >
           <Delete color={"secondary"} />
         </IconButton>
+          {/*
         <Typography>{cart_item.price * cart_item.quantity}</Typography>
+          */}
       </div>
     </Box>
   );
@@ -164,7 +169,7 @@ export default (props) => {
       .then((response) => {
         console.log("doomsday 001");
         console.log(ctx.state.merchandise_id);
-        ctx.state.merchandise_id === "4" ? setCoupons([]) : setCoupons(response.data);
+        ctx.state.merchandise_id === "99" ? setCoupons([]) : setCoupons(response.data);
       })
       .catch((error) => {
         console.log("Coupon loading failed.");
@@ -191,7 +196,7 @@ export default (props) => {
               direction={"column"}
               alignItems={"center"}
               justify={"center"}
-              style={{ minHeight: "100vh" }}
+              style={{ minHeight: "200vh" }}
             >
               <Grid item xs={12}>
                 <Typography variant={"h4"}> Empty </Typography>
@@ -280,11 +285,11 @@ export default (props) => {
                 <Typography variant={"subtitle2"} align={"left"} style={{
                   color:"green", fontWeight:"bold", fontSize:"2vh"
                 }}>
-                  Select coupon (Coupon will apply on Non-Already Discounted Vendors).{" "}
+                  Select coupon for Discount.{" "}
                 </Typography>
 
                 <Select
-                  style={{ width: "50%" }}
+                  //style={{ width: "100%" }}
                   variant={"outlined"}
                   fullWidth
                   value={coupon}

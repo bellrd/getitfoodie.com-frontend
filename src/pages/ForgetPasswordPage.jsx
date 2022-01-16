@@ -146,7 +146,7 @@ export default function ForgetPasswordPage(props) {
           <Grid container>
             <Grid item xs>
               <Link to="/help" variant="body2">
-                Need Help.? Call Us on 9161419412
+                Need Help.? Call Us on 8604850890
               </Link>
             </Grid>
             <Grid item>

@@ -120,7 +120,7 @@ export default function LoginPage(props) {
                 })
             })
             .catch(function (error) {
-                alert("mobile number or password is not valid");
+                alert("mobile number or password is not valid. If not remembered, plz try forgot option to recover it or Contact Tomestry helpline.");
                 setDisableSubmit(false)
             });
     };

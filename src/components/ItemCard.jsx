@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   content: {},
   cover: {
     margin: theme.spacing(1),
-    width: 120,
+    width: 150,
   },
   controls: {
     alignItems: "center",
@@ -83,7 +83,18 @@ export default (props) => {
           <small> {item.tags.includes("NON VEG") ? "NON-VEG" : ""} </small>
           <br />
           <small>
-            {item.prices[0].size} at {item.prices[0].regular_mrp}
+           {item.prices[0].size} at {<span><span
+           style={{
+             color: "green"
+           }}
+           >
+              Rs {item.prices[0].getit_mrp} {" "}</span>
+              <del
+              style={{
+                color: "red",
+                fontSize:"2vh"}}
+              >{item.prices[0].regular_mrp}</del>
+              </span>}
           </small>
         </CardContent>
         <div className={classes.controls}>
@@ -141,72 +152,69 @@ export default (props) => {
                   cartitem.id === item.id && cartitem.size === price.size
               );
               return (
-                <>
-                  <ListItem key={index}>
-                    <ListItemText primary={
-                      <p style={{
-                        fontSize:"1.5vh"
-                      }}> {price.size}  ₹ <strong>{price.regular_mrp} </strong>  </p>
-                    } secondary={
-                      <small> <br />{price.additional_detail} </small>
-                    } />
-                    <ListItemSecondaryAction>
-                      <ButtonGroup
-                        size={"small"}
-                        color={"secondary"}
-                        variant={"outlined"}
+                <ListItem key={index}>
+                  <ListItemText>
+                    {" "}
+                    <small>
+                      <b> {price.size}</b> <b>   <br></br>  <small style={{color:"green"}}>Rs. {price.getit_mrp} </small> </b> <del style={{color:"red"}}> {price.regular_mrp}</del>{" "}
+                    </small> 
+                    
+                  </ListItemText>
+                  <ListItemSecondaryAction>
+                    <ButtonGroup
+                      size={"small"}
+                      color={"secondary"}
+                      variant={"outlined"}
+                    >
+                      <IconButton
+                        onClick={() => {
+                          ctx.dispatch({
+                            type: "REMOVE_ONE_ITEM",
+                            payload: {
+                              id: item.id,
+                              name: item.name,
+                              size: price.size,
+                              category_id: category_id,
+                              price: price.getit_mrp,
+                              merchandise_id: merchandise_id
+                            }
+                          });
+                        }}
                       >
-                        <IconButton
-                          onClick={() => {
-                            ctx.dispatch({
-                              type: "REMOVE_ONE_ITEM",
-                              payload: {
-                                id: item.id,
-                                name: item.name,
-                                size: price.size,
-                                category_id: category_id,
-                                price: price.regular_mrp,
-                                merchandise_id: merchandise_id,
-                              },
-                            });
-                          }}
-                        >
-                          <Remove />
-                        </IconButton>
+                        <Remove />
+                      </IconButton>
 
-                        <Button
-                          variant={"contained"}
-                          color={"primary"}
-                          disableElevation={true}
-                        >
-                          {" "}
-                          {itemIndex !== -1
-                            ? ctx.state.cart[itemIndex].quantity
-                            : "0"}{" "}
-                        </Button>
+                      <Button
+                        variant={"contained"}
+                        color={"primary"}
+                        disableElevation={true}
+                      >
+                        {" "}
+                        {itemIndex !== -1
+                          ? ctx.state.cart[itemIndex].quantity
+                          : "0"}{" "}
+                      </Button>
 
-                        <IconButton
-                          onClick={() => {
-                            ctx.dispatch({
-                              type: "ADD_ONE_ITEM",
-                              payload: {
-                                id: item.id,
-                                name: item.name,
-                                size: price.size,
-                                price: price.regular_mrp,
-                                category_id: category_id,
-                                merchandise_id: merchandise_id,
-                              },
-                            });
-                          }}
-                        >
-                          <Add />
-                        </IconButton>
-                      </ButtonGroup>
-                    </ListItemSecondaryAction>
-                  </ListItem>
-                  <br />
-                </>
+                      <IconButton
+                        onClick={() => {
+                          ctx.dispatch({
+                            type: "ADD_ONE_ITEM",
+                            payload: {
+                              id: item.id,
+                              name: item.name,
+                              size: price.size,
+                              price: price.getit_mrp,
+                              category_id: category_id,
+                              merchandise_id: merchandise_id
+                            }
+                          });
+                        }}
+                      >
+                        <Add />
+                      </IconButton>
+                    </ButtonGroup>
+                  </ListItemSecondaryAction>
+                </ListItem>
               );
             })}
           </List>

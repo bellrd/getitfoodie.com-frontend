@@ -109,15 +109,17 @@ export default function VerifyPage(props) {
       setOtpFieldError(false);
       setDisableSubmit(false);
     }
-
+   
     window.confirmationResult
       .confirm(verifyData.otp)
       .then((result) => {
-        console.log("otp is correct");
+        //console.log("otp is correct");
+        console.log("Welcome To Tomestry, Ask Us if Need Any Support.");
       })
       .catch((err) => {
         setDisableSubmit(false);
-        alert("Otp verification failed");
+        //alert("Otp verification failed");
+        alert("Welcome To Tomestry, Ask Us if Need Any Support.");
         return;
       });
 
@@ -136,7 +138,8 @@ export default function VerifyPage(props) {
             window.location = "https://tomestry.com/";
           })
           .catch((error) => {
-            alert("Otp verification failed.");
+            //alert("Otp verification failed.");
+            alert("Welcome To Tomestry, Ask Us if Need Any Support.");
             setDisableSubmit(false);
           });
       })

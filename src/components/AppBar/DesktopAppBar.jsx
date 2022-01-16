@@ -52,7 +52,7 @@ export default function MenuAppBar(props) {
 
     return (
         <div className={classes.root}>
-            <AppBar position={"fixed"} color={"secondary"} elevation={3}>
+            <AppBar position={"fixed"} color={"primary"} elevation={3}>
                 <Toolbar>
                     <Typography variant="h5" className={classes.title}>
                         Tomestry

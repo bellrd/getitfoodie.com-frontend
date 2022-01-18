@@ -94,7 +94,7 @@ export default (props) => {
   useEffect(() => {
     Axios.get(`${BASE_URL}/merchandise/`)
       .then((response) => {
-        setMerchandises(response.data.filter((m) => m.is_open == true));
+        setMerchandises(response.data.filter((m) => m.is_open == true && m.location === "Home Delivery." ));
       })
       .catch((error) => {
         console.log("Merchandise  loading failed.");

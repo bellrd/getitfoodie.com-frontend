@@ -1,6 +1,7 @@
 import React from "react";
 import AppBar from "../components/AppBar";
-import { Box, Container, CssBaseline,ExpansionPanel,
+import {
+  Box, Container, CssBaseline, ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Hidden,
@@ -10,26 +11,34 @@ import { Box, Container, CssBaseline,ExpansionPanel,
   DialogContent,
   ListSubheader,
   Paper,
-  IconButton,} from "@material-ui/core";
+  IconButton,
+  Divider,
+} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Slider from "../components/Slider";
+import SliderTop from "../components/SliderTop";
 import Footer from "../components/Footer";
 import MerchandiseCardList from "../components/MerchandiseCardList";
 import QuickLinks from "../components/QuickLinks";
-import PickUp1 from "../components/PickUp1";
-import PickUp2 from "../components/PickUp2";
-import PickUp3 from "../components/PickUp3";
+import FoodCollection from "../components/FoodCollection";
+import OnlineOfflinemsg from "../components/OnlineOfflinemsg";
+import SpicyChi from "../components/SpicyChi";
+import LaunchingSoon from "../components/LaunchingSoon";
 import PopularMerchandiseList from "../components/PopularMerchandiseList";
 import hero_background from "../assets/hero_background.jpg";
+import SelfPick from "../components/SelfPick";
+import ProCopy from "../components/ProCopy";
 import NoticePopup from "../components/NoticePopup";
 // import CancelOrder from "../components/CancelOrder";
+import AdPick from "../components/AdPick";
 import CancelOrder from "../components/CancelOrder";
 import BlinkText from "../components/BlinkText";
+import BlinkSp from "../components/BlinkSp";
 import BlinkNotice from "../components/BlinkNotice";
 // import WelcomeText from "../components/WelcomeText";
-import {ExpandMore, KeyboardBackspaceRounded as Back} from "@material-ui/icons";
+import { ExpandMore, KeyboardBackspaceRounded as Back } from "@material-ui/icons";
 
 
 
@@ -81,14 +90,14 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bolder",
     textDecoration: "underline",
     color: theme.palette.primary.main
-    },
+  },
   vendorTitle: {
-  marginTop: theme.spacing(1),
-  marginLeft: theme.spacing(2),
-  marginBottom: theme.spacing(2),
-  fontWeight: "bolder",
-  textDecoration: "underline",
-  color: theme.palette.primary.main
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bolder",
+    textDecoration: "underline",
+    color: theme.palette.primary.main
   },
   noticeTitle: {
     marginTop: theme.spacing(1),
@@ -152,7 +161,7 @@ export default props => {
           Services Available By 11:00 A.M To 9:30 P.M
         </Typography> */}
 
-        
+
 
 
 
@@ -162,62 +171,71 @@ export default props => {
 
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {""}
-           .{" "}
-           {/* Click Me Below On Slider{" "} */}
+          .{" "}
+          {/* Click Me Below On Slider{" "} */}
+
         </Typography>
         <Box mt={1}>
           <CssBaseline />
+          <SliderTop />
+          <ProCopy />
+          <OnlineOfflinemsg />
           <Slider />
+          
         </Box>
       </Container>
-      
 
-      <Container maxWidth={"lg"}>
-        <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
+
+      <Container maxWidth={"lg"} style={{ paddingBottom: "9px" }} >
+        {/* <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
           Welcome to Tomestry{" "}
-        </Typography>
+        </Typography> */}
         {/* <Typography variant={"h6"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
           Hello Guest{" "}
         </Typography> */}
         {/* <WelcomeText/> */}
-        <Typography body={"h6"} align={"center"} style={{color:"blue"}} className={classes.noticeTitle}>
+        <Typography body={"h6"} align={"center"} style={{ color: "blue" }} className={classes.noticeTitle}>
+          {/* {" "}
+          <strong>You are Most Welcome in Tomestry.</strong> */}
+          
+          {/* <BlinkText /> */}
+          <strong>Tomestry Services Available from 11:00 a.m To 9:30 p.m</strong>
           {" "}
-          You are Most Welcome in Tomestry. {" "}
-          <BlinkText/>
-          <BlinkNotice/>
         </Typography>
         
-        
-        
-        
-        
+
+
+
+
+
+
         {/*<Typography body={"h6"} align={"center"} style={{color:"red"}} className={classes.timeTitle}>
           {" "}
           Services Available From 11:00 A.M To 9:30 P.M{" "}
         </Typography>*/}
-        <CancelOrder/>
+        
 
 
 
         <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore/>} style={{backgroundColor:"rgb(189, 177, 235)"}}>
-        <Typography style={{color:"red"}} >Home Delivery</Typography>
-        </ExpansionPanelSummary>
+          <ExpansionPanelSummary expandIcon={<ExpandMore />} style={{ backgroundColor: "orange" }}>
+            <Typography style={{ color: "Black", fontWeight: "bold" }} >Home Delivery</Typography>
+          </ExpansionPanelSummary>
 
 
 
-        {/* Merchant Card Code Start */}
-        
-        <ExpansionPanelDetails>
-        <Grid container spacing={4}>
-          <MerchandiseCardList />
-        </Grid>
-        </ExpansionPanelDetails>
+          {/* Merchant Card Code Start */}
 
-                            
-        {/* merchant Card Code End */}
+          <ExpansionPanelDetails>
+            <Grid container spacing={4}>
+              <MerchandiseCardList />
+            </Grid>
+          </ExpansionPanelDetails>
+
+
+          {/* merchant Card Code End */}
         </ExpansionPanel>
 
       </Container>
@@ -226,22 +244,24 @@ export default props => {
 
 
 
-      <div></div>
-      
+
+
+
       <Container maxWidth={"lg"}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMore/>} style={{backgroundColor:"rgb(189, 000, 235)"}}>
-          <Typography>Self PickUp (20% Discount)</Typography>
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMore />} style={{ backgroundColor: "rgb(189, 130, 150)", fontWeight: "bold" }}>
+            <Typography style={{ fontWeight: "bold" }}><BlinkSp /></Typography>
           </ExpansionPanelSummary>
-        <ExpansionPanelDetails>    
-        <Grid container spacing={4}>
-          <PopularMerchandiseList />
-          <PickUp1 />
-          <PickUp2 />
-          <PickUp3 />
-        </Grid>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+          <ExpansionPanelDetails style={{ marginLeft: "0px" }}>
+            <Grid container spacing={4}>
+              {/* <AdPick />
+              <FoodCollection />
+          <SpicyChi />
+          <LaunchingSoon /> */}
+          <SelfPick />
+            </Grid>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </Container>
 
 
@@ -249,7 +269,7 @@ export default props => {
 
 
 
-      
+
 
       <Container maxWidth={"xl"}>
         <CssBaseline />
@@ -285,8 +305,9 @@ export default props => {
       <Container maxWidth={"md"}>
         <CssBaseline />
         <Typography variant={"h6"} className={classes.vendorTitle} align={"center"}>
-        Our Services
+          Our Services
         </Typography>
+
         <Grid
           container
           spacing={2}
@@ -295,17 +316,22 @@ export default props => {
             alignItems: "center",
             justifyItems: "center",
             justifyContent: "center",
-            marginTop:"1rem",
-            marginBottom:"2rem"
+            marginTop: "1rem",
+            marginBottom: "2rem"
           }}
           alignItems="center"
           justify="center"
         >
           <QuickLinks />
         </Grid>
+        <BlinkNotice />
+        <CancelOrder />
       </Container>
       <Footer />
+      
+      
       <NoticePopup />
+      
     </React.Fragment>
 
 
@@ -341,6 +367,5 @@ export default props => {
       </div>
     )}
   </Popup> */
-  
-  
-  
+
+

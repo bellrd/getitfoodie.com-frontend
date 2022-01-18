@@ -13,6 +13,7 @@ import {
 import Axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
+import UpiNotice from "../components/UpiNotice";
 import Loader from "../components/Loader";
 import { BASE_URL } from "../constant";
 import { GlobalContext } from "../GlobalContext";
@@ -218,7 +219,7 @@ export default (props) => {
           textAlign:"center"
 
         }}
-        >You can also pay via any UPI app to our delivery executive.</text>
+        ><UpiNotice /></text>
         <h2
         style={{
           textAlign:"center",

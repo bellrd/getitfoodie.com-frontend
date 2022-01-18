@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     textAlign: "center",
     alignItem: "center",
-    height: 150,
+    height: 120,
     padding: theme.spacing(4),
     marginRight: theme.spacing(1),
     marginLeft: theme.spacing(1),
@@ -140,7 +140,7 @@ export default (props) => {
       responsive={responsive}
       infinite={true}
       autoPlay={true}
-      autoPlaySpeed={1500}
+      autoPlaySpeed={3000}
       keyBoardControl={true}
       customTransition="all .5s ease-in-out"
       containerClass="carousel-container"

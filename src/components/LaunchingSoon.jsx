@@ -94,7 +94,7 @@ export default (props) => {
   useEffect(() => {
     Axios.get(`${BASE_URL}/merchandise/`)
       .then((response) => {
-        setMerchandises(response.data.filter((m) => m.is_open == true && m.id === 3 ));
+        setMerchandises(response.data.filter((m) => m.is_open == true && m.id === 35 ));
       })
       .catch((error) => {
         console.log("Merchandise  loading failed.");
@@ -140,7 +140,7 @@ export default (props) => {
                 <div>
                   <Rating
                     read_only
-                    value={merchandise.rating || 1}
+                    value={merchandise.rating || 5}
                     precision={0.5}
                     size={"small"}
                   />
@@ -156,7 +156,7 @@ export default (props) => {
               }}
                 
                 className={classes.additional_detail}>
-                <small>{merchandise.additional_detail.slice(0, 50)} </small>
+                <small>{merchandise.additional_detail.slice(0, 100)} </small>
               </div>
             </Card>
           </Grid>

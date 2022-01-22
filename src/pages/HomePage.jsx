@@ -37,6 +37,7 @@ import CancelOrder from "../components/CancelOrder";
 import BlinkText from "../components/BlinkText";
 import BlinkSp from "../components/BlinkSp";
 import BlinkNotice from "../components/BlinkNotice";
+import SmallMerchantCart from "../components/SmallMerchantCart";
 // import WelcomeText from "../components/WelcomeText";
 import { ExpandMore, KeyboardBackspaceRounded as Back } from "@material-ui/icons";
 
@@ -181,11 +182,13 @@ export default props => {
           <ProCopy />
           <OnlineOfflinemsg />
           <Slider />
+          <Grid container spacing={4}><SmallMerchantCart /></Grid><br></br><br></br>
+          
           
         </Box>
       </Container>
-
-
+      
+        
       <Container maxWidth={"lg"} style={{ paddingBottom: "9px" }} >
         {/* <Typography variant={"h5"} align={"center"} color={"#0000"} className={classes.vendorTitle}>
           {" "}
@@ -196,16 +199,11 @@ export default props => {
           Hello Guest{" "}
         </Typography> */}
         {/* <WelcomeText/> */}
-        <Typography body={"h6"} align={"center"} style={{ color: "blue" }} className={classes.noticeTitle}>
-          {/* {" "}
-          <strong>You are Most Welcome in Tomestry.</strong> */}
-          
-          {/* <BlinkText /> */}
-          <strong>Tomestry Services Available from 11:00 a.m To 9:30 p.m</strong>
-          {" "}
-        </Typography>
         
-
+        
+        
+        
+            
 
 
 
@@ -275,6 +273,14 @@ export default props => {
         <CssBaseline />
         <Typography variant={"h6"} className={classes.vendorTitle}>
           {" "}
+          <Typography body={"h6"} align={"center"} style={{ color: "blue" }} className={classes.noticeTitle}>
+          {/* {" "}
+          <strong>You are Most Welcome in Tomestry.</strong> */}
+          
+          {/* <BlinkText /> */}
+          <strong>Tomestry Services Available from 11:00 a.m To 9:30 p.m</strong>
+          {" "}
+        </Typography>
           Other services
         </Typography>
         <Box mt={2}>

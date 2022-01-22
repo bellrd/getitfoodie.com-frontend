@@ -196,7 +196,7 @@ export default (props) => {
               direction={"column"}
               alignItems={"center"}
               justify={"center"}
-              style={{ minHeight: "200vh" }}
+              style={{ minHeight: "100vh" }}
             >
               <Grid item xs={12}>
                 <Typography variant={"h4"}> Empty </Typography>
@@ -289,7 +289,7 @@ export default (props) => {
                 </Typography>
 
                 <Select
-                  //style={{ width: "100%" }}
+                  // style={{ width: "100%" }}
                   variant={"outlined"}
                   fullWidth
                   value={coupon}

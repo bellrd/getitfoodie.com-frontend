@@ -8,7 +8,7 @@ import {
   import "react-multi-carousel/lib/styles.css";
   import { useHistory } from "react-router-dom";
   
-  import imageUrl1 from "../assets/SliderTop.gif";
+  import imageUrl1 from "../assets/Empty_Cart.png";
   import imageUrl5 from "../assets/grocery.png";
   import imageUrl3 from "../assets/leg.jpg";
   // target_url: "https://getitfoodie.com/menu/17";
@@ -69,8 +69,7 @@ import {
       justifyContent: "space-evenly",
       textAlign: "center",
       alignItem: "center",
-      // height: 105,
-      // width:310,
+      height: 105,
       padding: theme.spacing(4),
       marginRight: theme.spacing(0),
       marginBottom: 5,
@@ -97,7 +96,7 @@ import {
         itemClass="carousel-item-padding-40-px"
       >
         {demoOffer.map((item, index) => (
-          <Paper 
+          <Paper
             key={index}
             className={classes.offercard}
             elevation={3}

@@ -200,14 +200,14 @@ export default (props) => {
               setPayment_method(e.target.value);
             }}
           >
-            {order.total >= 66666           ///here was 6666 to disable online payment option appearence
+            {order.total >= 700           ///here was 6666 to disable online payment option appearence
               ? ["ONLINE"].map((option, index) => (
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
                 ))
-              : ["COD"].map((option, index) => (
-              //  : ["COD","ONLINE"].map((option, index) => (                   ///this handles payment option for cod or online
+              //: ["COD"].map((option, index) => (
+                : ["COD","ONLINE"].map((option, index) => (                   ///this handles payment option for cod or online
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>

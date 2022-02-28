@@ -11,7 +11,7 @@ export default (props) => {
     useEffect(() => {
         setTimeout(() => {
             history.replace("/")
-        }, 3000)
+        }, 8000)
     },[]);
     if (props.match.params.action === "simsim") {
         history.replace("/success")

@@ -38,7 +38,7 @@ export default (props) => {
                 </Container>
             </div>
             <Container maxWidth={"sm"}>
-                <form action={"https://securegw.paytm.in/order/process"} name={"paytm"} id={"paytm"}>
+                <form action={"http://sandbox.cashfree.com/pg/orders/pay"} name={"paytm"} id={"paytm"}>
                     <input type={"hidden"} name={"MID"} value={payload.MID}/>
                     <input type={"hidden"} name={"ORDER_ID"} value={payload.ORDER_ID}/>
                     <input type={"hidden"} name={"CHANNEL_ID"} value={payload.CHANNEL_ID}/>

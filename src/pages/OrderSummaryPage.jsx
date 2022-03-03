@@ -134,7 +134,48 @@ export default (props) => {
           alert(error.response.data);
           history.replace("/cart");
         });
-    } else if (payment_method === "ONLINE") {
+
+       
+
+
+
+
+        
+
+
+
+    }
+
+
+ //Self Pickup code start for payment mapping
+
+    else if (payment_method === "UPI") {
+      Axios.post(
+        `${BASE_URL}/place-order-cod/`,
+        {
+          id: order.id,
+          payment_method: "COD",
+        },
+        { headers: { Authorization: ctx.state.accessToken } }
+      )
+        .then((response) => {
+          ctx.dispatch({ type: "ORDER_PLACED" });
+          setTimeout(() => {
+            history.replace("/success/simsim");
+          }, 2000);
+        })
+        .catch((error) => {
+          alert(error.response.data);
+          history.replace("/cart");
+        });
+      }
+  //Self pickup code end
+   
+    
+    
+    
+    
+    else if (payment_method === "ONLINE") {
       Axios.post(
         `${BASE_URL}/place-order-online/`,
         {
@@ -200,14 +241,15 @@ export default (props) => {
               setPayment_method(e.target.value);
             }}
           >
-            {order.total >= 700           ///here was 6666 to disable online payment option appearence
+            {order.total >= 66666           ///here was 6666 to disable online payment option appearence
               ? ["ONLINE"].map((option, index) => (
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>
                 ))
-              //: ["COD"].map((option, index) => (
-                : ["COD","ONLINE"].map((option, index) => (                   ///this handles payment option for cod or online
+                //: ["COD"].map((option, index) => (
+                  //: ["COD","ONLINE"].map((option, index) => (
+                  : ["COD","UPI"].map((option, index) => (                   ///this handles payment option for cod or online
                   <MenuItem key={index} value={option}>
                     {option}
                   </MenuItem>

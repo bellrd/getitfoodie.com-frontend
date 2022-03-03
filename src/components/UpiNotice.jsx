@@ -4,9 +4,10 @@ import Blink from 'react-blink-text';
 function Application(){
     return (
       <div className="Application">
-        <Blink color='black' text='You can pay by any UPI Method(Google Pay, PhonePe, Paytm,etc) to Delivery Agent.' fontSize='24' style={{fontweight:"bold"}} >
+        <Blink color='blue' text='If You are Ordering As Self-Pickup then You need to pay on 9161419412 online by any payment mehod.' fontSize='24' style={{fontweight:"bold"}} >
         </Blink> 
       </div>
+      
       
     );
 }
